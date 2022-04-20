@@ -1,0 +1,21 @@
+{% if settings.show_logo %}
+	{%- if settings.logo != blank or settings.logo_mobile != blank -%}
+	{%- assign logo_mobile_size = settings.header_mobile_logo_size | default: 'medium' -%}
+	<a href="{{ routes.root_url }}" style="max-width:{{ settings.header_mobile_logo_width | append: "px" }};"class="header-mobile__logo__image dib" title="{{ shop.name | escape }}">
+        <img src="{{ settings.logo | img_url: '200x74' }}" alt="{{ settings.logo_mobile.alt | default: settings.logo.alt | default: shop.name | escape }}" class="img-responsive center-block lazyload"{% if settings.logo_mobile %} width="{{ settings.logo_mobile.width }}" height="{{ settings.logo_mobile.height }}"{% elsif settings.logo %} width="{{ settings.logo.width }}" height="{{ settings.logo.height }}"{% endif %} style="width:auto;" loading="lazy">
+	  {%- comment -%}
+		<img data-src="{{ 'MS_logo_svg.svg' | asset_url }}" alt="{{ settings.logo_mobile.alt | default: settings.logo.alt | default: shop.name | escape }}" class="img-responsive center-block lazyload"{% if settings.logo_mobile %} width="{{ settings.logo_mobile.width }}" height="{{ settings.logo_mobile.height }}"{% elsif settings.logo %} width="{{ settings.logo.width }}" height="{{ settings.logo.height }}"{% endif %} style="width:auto;" loading="lazy">
+	  {%- endcomment -%}
+    </a>
+	{%- else -%}
+    <a class="header-mobile__logo__link" href="{{ routes.root_url }}" title="{{ shop.name | escape }}">
+      <img data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/ramenbox1-01.svg?v=1638351725" 
+         alt="{{ settings.logo_mobile.alt | default: settings.logo.alt | default: shop.name | escape }}" 
+         class="img-responsive center-block lazyload"
+         width=100 
+         loading="lazy">
+    </a>
+	{%- endif -%}
+{% else %}
+<a class="header-mobile__logo__link" href="{{ routes.root_url }}" title="{{ shop.name | escape }}">{{ shop.name }}</a>
+{% endif %}

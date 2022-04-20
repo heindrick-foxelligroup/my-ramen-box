@@ -1,0 +1,239 @@
+{% comment %}
+******************************************
+	Info:
+		Custom banners with text section for ramen subscription product.
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<div id="{{section.id}}" class="{% if section.settings.enable_mobile == false %} fox-hide--small {% endif %} {% if section.settings.enable_desktop == false %} fox-hide--medium-up {% endif %}" >
+  <div class="wrapper">
+   {% render 'ramen-divider' %}
+    <h2 class="title"><span>{{ section.settings.headline }}</span></h2>
+   	<div class="content">
+      {% for block in section.blocks %}
+        <div class="banner-item">
+          <img src="{{ block.settings.image | img_url: 'master'}}">
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <button class="fox-hide--small"><i class="lnr-shopping-cart"></i><span>Add to cart - {{ product.price | money }}</span></button>
+  </div>
+</div>
+
+<style>
+
+  
+  @media only screen and (min-width: 991px){
+    #{{section.id}} .content{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+      #{{section.id}} button{
+        display: block;
+    background: #E84C35;
+	border-radius: 360px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border-width: 0;
+    max-width: 330px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+  
+  #{{section.id}} .info-section button:active{
+    background: #454466;
+  }
+
+    #{{section.id}} .banner-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+	  max-width: 250px;
+    }
+
+    #{{section.id}} .title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #454466; 
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    #{{section.id}} .divider{
+      display: none;
+    }
+
+    #{{section.id}} .wrapper{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+
+    #{{section.id}} .banner-item img{
+      max-width: 200px;
+    }
+
+    #{{section.id}} .banner-item h3{
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 100%;
+      color: #E84C35;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    #{{section.id}} .banner-item p{
+      font-size: 16px;
+      line-height: 22px;
+      color: #323050;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media only screen and (max-width: 990px){
+    #{{section.id}} .title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #454466; 
+      margin-bottom: 0;
+    }
+
+    #{{section.id}} .divider{
+      width: 100vw;
+      margin-left: -15px;
+      margin-bottom: 15px;
+    }
+
+    #{{section.id}} .wrapper{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+  #{{section.id}} .banner-item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+
+    #{{section.id}} .banner-item img{
+       max-width: 45%;
+    }
+
+    #{{section.id}} .banner-item h3{
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 150%;
+      color: #E84C35;
+      margin-left: 30px;
+    }
+
+    #{{section.id}} .banner-item p{
+      font-size: 16px;
+      line-height: 22px;
+      color: #323050;
+      width: 100%;
+    }
+
+  }
+</style>
+
+<script>
+  $(`#{{section.id}} button`).click(function(){
+   	$(".add-cart-btn").click();
+  });
+  
+</script>
+
+{% schema %}
+{
+  "name": "Product - Banners & Text",
+  "class": "product-banners-text-section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "headline",
+    "label": "Headline",
+    "default": "Headline Example"
+    },
+    {
+    "type": "checkbox",
+    "id": "enable_mobile",
+    "label": "Enable (mobile)",
+    "default": true
+    },
+	{
+    "type": "checkbox",
+    "id": "enable_desktop",
+    "label": "Enable (desktop)",
+    "default": true
+    }
+  ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Section",
+        "settings": [
+
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title Example"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo tincidunt ipsum, ut suscipit nulla vehicula ac. Pellentesque id est ut turpis posuere dignissim ut in nibh."
+          }
+        ]
+      }
+    ],
+  "presets": [
+    {
+      "name": "Product - Banners & Text",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,540 @@
+{% comment %}
+******************************************
+	Info:
+		Custom reviews section section for product page.
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+{% capture next_arrow_html %}
+  <svg style="right: 0; width: 50px; top: 30px" width="87" height="180" viewBox="0 0 87 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.8">
+      <mask id="mask0_122_32" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+        <circle cx="90" cy="90" r="90" transform="rotate(180 90 90)" fill="#EFBD3F"/>
+      </mask>
+      <g mask="url(#mask0_122_32)">
+        <path d="M89.5814 181.674L-0.418587 181.674L-0.418603 -2.09312L89.5814 -2.09312L89.5814 181.674Z" fill="#E84C35"/>
+      </g>
+    </g>
+    <path d="M34.2 134.178C32.6407 135.737 30.113 135.741 28.5496 134.185L26.8495 132.493C25.278 130.93 25.278 128.386 26.8495 126.822L58.9952 94.8354C60.5666 93.2717 60.5666 90.7283 58.9952 89.1646L26.8495 57.1775C25.2781 55.6138 25.2781 53.0704 26.8495 51.5067L28.5497 49.8149C30.1131 48.2592 32.6407 48.2626 34.2 49.8224L73.5366 89.172C75.0981 90.734 75.0981 93.266 73.5366 94.828L34.2 134.178Z" fill="#333050"/>
+  </svg>
+{% endcapture %}
+
+{% capture prev_arrow_html %}
+  <svg style="width: 50px; top: 30px" width="87" height="180" viewBox="0 0 87 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.8">
+      <mask id="mask0_122_27" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-93" y="0" width="180" height="180">
+        <circle cx="-3" cy="90" r="90" fill="#EFBD3F"/>
+      </mask>
+      <g mask="url(#mask0_122_27)">
+        <rect x="-2.58142" y="-77.8604" width="169.953" height="296.372" fill="#E84C35"/>
+      </g>
+    </g>
+    <path d="M57.1636 132.178C58.7229 133.737 61.2505 133.741 62.8139 132.185L64.514 130.493C66.0855 128.93 66.0855 126.386 64.514 124.822L32.3684 92.8354C30.7969 91.2717 30.7969 88.7283 32.3684 87.1646L64.5141 55.1775C66.0855 53.6138 66.0855 51.0704 64.5141 49.5067L62.8139 47.8149C61.2505 46.2592 58.7229 46.2626 57.1636 47.8224L17.8269 87.172C16.2654 88.734 16.2654 91.266 17.8269 92.828L57.1636 132.178Z" fill="#333050"/>
+  </svg>
+{% endcapture %}
+
+<div id="{{section.id}}" class="{% if section.settings.enable_mobile == false %} fox-hide--small {% endif %} {% if section.settings.enable_desktop == false %} fox-hide--medium-up {% endif %}">
+  {% render 'ramen-divider' %}
+  <div class="wrapper">
+    <h2 class="title"><span>What others have said</span></h2>
+    <div class="content">
+      <div class="testimonial-slider">
+        {% for block in section.blocks %}
+        <div class="slide">
+          <div class="testimonial">
+            <div class="info-section">
+              <div class="author-name">{{ block.settings.name }}</div>
+              <img class="stars" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_983.png?v=1637853693"/>
+              <div class="quote">{{ block.settings.quote | strip }}</div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="fox-hide--small"> {% render 'ramen-divider' %}</div>
+</div>
+
+<style>
+  
+  
+  @media only screen and (min-width: 991px){
+    #{{section.id}} .content{
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18663_1.jpg?v=1638460231);
+      background-repeat: no-repeat;
+      background-size: cover;
+      /*box-shadow: 0px 0px 30px 30px white inset;*/
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #{{ section.id }} .slide{
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    #{{ section.id }} .slick-dots{
+      bottom: -60px; 
+    }
+
+    #{{section.id}} ul.slick-dots li.slick-active button:before{
+      background-color: black !important;
+      top: 5px;
+      left: 5px;
+      width: 12px;
+      height: 12px;
+
+    }
+
+    #{{section.id}} ul.slick-dots li button:before {
+      background-color: #00000000 !important;
+      border: 2px solid black !important;
+      top: 5px;
+      left: 5px;
+      width: 12px;
+      height: 12px;
+    }
+    
+      #{{section.id}} .title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #454466; 
+    margin-bottom: 40px;
+  }
+    
+    #{{section.id}} .ramen-divider{
+     	margin-top: -35px; 
+    }
+    
+
+  }
+      
+
+  
+  
+  
+  #{{section.id}}{
+   	margin-top: 80px; 
+  }
+  
+    #{{ section.id }} .section__title__text{
+   	padding-top: 20px; 
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  #{{ section.id }} .testimonial{
+   	display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: flex-start;
+  }
+  
+  #{{ section.id }} .testimonial .info-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  
+  #{{ section.id }} .info-section .stars{
+  	max-width: fit-content !important;
+    margin-bottom: 5px;
+  }
+  
+  #{{ section.id }} .info-section .quote {
+    padding-right: 15px;
+    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #454466;
+  }
+  
+  #{{ section.id }} .info-section .quote p{
+  	display: inline; 
+  }
+  
+  
+  #{{ section.id }} .info-section .author-name{
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+	margin-bottom: 5px;
+    /* purple grey */
+
+    color: #454466;
+  }
+  
+  #{{ section.id }} .info-section .stars .fa-star{
+    font-size: 12px;
+   	color: orange; 
+    
+  }
+  
+  #{{ section.id }} .testimonial .avatar-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  
+  #{{ section.id }} .slide{
+    background: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.15); 
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.15);
+  }
+  
+
+    
+  #{{section.id}} .wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+    
+      #{{section.id}} .ramen-divider{
+    margin-bottom: 40px;
+    
+  }
+  
+  @media only screen and (max-width: 990px){
+   	  #{{section.id}} .ramen-divider{
+       	 margin-top: -15px;
+      }
+    
+    
+          #{{section.id}} .title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #454466; 
+    margin-bottom: -10px;
+  }
+    
+        .testimonial-slider .slick-list{
+      padding: 40px 20px !important; 
+    }
+    
+    
+  }
+    
+    
+
+    
+    #{{ section.id }} .slide{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    
+       #{{section.id}} ul.slick-dots li.slick-active button:before{
+     background-color: #EFBD3F !important;
+     top: 5px;
+     left: 5px;
+     width: 12px;
+     height: 12px;
+   	 
+  }
+    
+  #{{section.id}} ul.slick-dots li button:before {
+   	 background-color: white !important;
+     border: 2px solid #EFBD3F !important;
+     top: 5px;
+     left: 5px;
+     width: 12px;
+     height: 12px;
+  }
+  
+
+  
+  
+  #{{ section.id }} .fancy-testimonials{
+   	background-color: {{ section.settings.section_bkg }};
+    padding-bottom: 25px;
+  }
+  
+  #{{ section.id }} .fancy-testimonials .title{
+   	text-align: center;
+	padding-top: 30px;
+   	font-size: 20px;
+    line-height: 22px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 21px;
+    font-weight: 550;
+    color: var(--color_st);
+    line-height: 1.2em;
+    font-family: var(--fm_second);
+    font-style: var(--font_style_second);
+  }
+  
+  #{{ section.id }} .section__title__text {
+   	font-size: 26px; 
+  }
+  
+  #{{ section.id }} .fancy-testimonials .slick-track{
+    display: flex;
+    align-items: center;
+  }
+  
+  #{{ section.id }} .fancy-testimonials .slick-dots{
+   	bottom: -15px !important; 
+  }
+  
+  #{{ section.id }} .slick-track{
+    display: flex !important;
+  }
+
+  #{{ section.id }} .slick-slide{
+    height: inherit !important;
+  }
+
+  
+</style>
+
+  
+<script>
+  window.addEventListener("DOMContentLoaded", function(){
+    $('#{{section.id}} .testimonial-slider').slick({
+      centerMode: true,
+      centerPadding: '350px',
+      slidesToShow: 1,
+      dots: true,
+      arrows: true,
+      prevArrow: `{{ prev_arrow_html }}`,
+      nextArrow: `{{ next_arrow_html }}`,
+      responsive: [
+        {
+          breakpoint: 990,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '20px',
+            slidesToShow: 1,
+      		nextArrow: `<button aria-label="button" class="slick-next lh1 slick-box slick-arrow" style="" aria-disabled="false"><span></span></button>`,
+      		prevArrow: `<button aria-label="button" class="slick-prev lh1 slick-box slick-arrow" aria-disabled="false" style=""><span></span></button>`
+          }
+        }
+      ]
+    });
+  });
+
+</script>
+
+{%- render 'section-background-end' -%}
+{% schema %}
+  {
+    "name": "Testimonials 2 (Custom)",
+    "class": "testimonials-2-custom",
+    "max_blocks": 9,
+    "settings": [
+      {
+      "type": "checkbox",
+      "id": "enable_mobile",
+      "label": "Enable (mobile)",
+      "default": true
+      },
+      {
+      "type": "checkbox",
+      "id": "enable_desktop",
+      "label": "Enable (desktop)",
+      "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "[View the guide for this section](https://beloria-docs.boostheme.com/dynamic-sections/text/testimonials)"
+      },
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "checkbox",
+        "id": "bkg_enable",
+        "label": "Enable",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "section_bkg",
+        "label": "Pick a background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_bkg_image",
+        "label": "Background image"
+      },
+      {
+        "type": "radio",
+        "id": "section_bkg_gutter",
+        "label": "Background size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "medium"
+          },
+          {
+            "value": "high",
+            "label": "High"
+          }
+        ],
+        "default": "high"
+      },
+      {
+        "type": "radio",
+        "id": "section_bkg_style",
+        "label": "Background image style",
+        "options": [
+          {
+            "value": "cover",
+            "label": "Cover"
+          },
+          {
+            "value": "contain",
+            "label": "Contain"
+          }
+        ],
+        "default": "cover"
+      },
+      {
+        "type": "header",
+        "content": "Section Gutters"
+      },
+      {
+        "type": "checkbox",
+        "id": "top_gutter",
+        "label": "Enable top gutter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "bottom_gutter",
+        "label": "Enable bottom gutter",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "General Settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Testimonials"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Sub heading"
+      },
+      {
+        "type": "select",
+        "id": "heading_pos",
+        "label": "Heading position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          },
+          {
+            "value": "above",
+            "label": "Above"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Wide display"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Author",
+            "default": "Author's name"
+          },
+          {
+            "type": "richtext",
+            "id": "quote",
+            "label": "Text",
+            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "author_avatar",
+            "label": "Author's avatar"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials 2 (Custom)",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "quote",
+            "settings": {
+              "name": "David"
+            }
+          },
+          {
+            "type": "quote",
+            "settings": {
+              "name": "Kane"
+            }
+          },
+          {
+            "type": "quote",
+            "settings": {
+              "name": "Susan"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

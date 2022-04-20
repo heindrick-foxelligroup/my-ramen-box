@@ -1,0 +1,394 @@
+{% comment %}
+******************************************
+	Info:
+		Premium product section fully customizable
+
+	  
+    Author: Zilvinas Vaisnoras
+    Date created: 2021-12-20
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+{%- if section.settings.enable_on_mobile == true -%}
+
+<style>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+  
+  #{{section.id}}.mobile .slogan-name-wrapper {
+    justify-content: center;
+    flex-direction: column;
+  }
+  #{{section.id}}.mobile .slogan-name-wrapper div.flex {
+    width: 250px;
+  }
+  #{{section.id}}.mobile .slogan {
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFE091;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 30px 0 30px 30px;
+  }
+  #{{section.id}}.mobile .product-name {
+    font-family: 'Potta One', cursive;
+    font-size: 42px;
+    line-height: 38px;
+    color: #FFFFFF;
+    font-weight: 900;
+    text-transform: uppercase;
+    max-width: 290px;
+    padding: 0 30px 30px 30px;
+  }
+  #{{section.id}}.mobile .title {
+    background:  url('{{ section.settings.bg_top_mobile | img_url: 'large'}}') bottom center no-repeat;
+    background-size: cover;
+    font-size: 32px;
+    line-height: 43px;
+    color: #FFFFFF;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    padding: 40px 0 111px 0;
+    width: 100%;
+  }
+  #{{section.id}}.mobile .main-image-wrapper {
+    align-items: center;
+    margin-left: -50px;
+  }
+  #{{section.id}}.mobile .main-image {
+    height: 200px;
+  }
+  #{{section.id}}.mobile .img-arrow-wrapper {
+    position: relative;
+    width: 100%;
+    margin-right: 50%;
+  }
+  #{{section.id}}.mobile .img-arrow {
+    position: absolute;
+    bottom: -20px;
+    right: -207px;
+    height: 130px;
+  }
+  #{{section.id}}.mobile .text-wrapper {
+    font-size: 18px;
+    line-height: 24px;
+    color: #323050;
+    font-weight: initial;
+    max-width: 100%;
+    padding: 30px 0 30px 30px;
+  }
+  #{{section.id}}.mobile .text-item {
+    width: 100%;
+  }
+  #{{section.id}}.mobile .text-head {
+    font-size: 24px;
+    line-height: 32px;
+    color: #E84C35;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #{{section.id}}.mobile .text-head-title {
+    padding: 0 0 0 20px;
+    width: 130px;
+  }
+  #{{section.id}}.mobile .text-content-text {
+    font-size: 18px;
+    line-height: 24px;
+    color: #323050;
+    font-weight: initial;
+    padding: 0 15px;
+  }
+  #{{section.id}}.mobile .text-head-img {
+    width: 140px;
+  }
+  #{{section.id}}.mobile .text-item.second-item {
+    background: url('https://cdn.shopify.com/s/files/1/0598/9649/6312/files/how-it-works-2-bg.png') top right no-repeat;
+  }
+  #{{section.id}}.mobile .text-item.third-item {
+    background: url('https://cdn.shopify.com/s/files/1/0598/9649/6312/files/how-it-works-3-bg.png') top right no-repeat;
+  }
+  
+  @media only screen and (max-width: 579px){
+    #{{section.id}}.mobile .text-head-title {
+      padding: 0;
+    } 
+    #{{section.id}}.mobile .text-head {
+      justify-content: left;
+    }
+   }
+  	
+</style>
+
+<div id="{{section.id}}" class="mobile section-how-it-works fox-hide--medium-up">
+  <div class="wrapper">
+    <div class="flex title fox-uppercase">
+        <span class="img-arrow-wrapper">
+          <img class="img-arrow lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/arrow-how-it-works.png" loading="lazy"/>
+      	</span>
+       	How it works
+    </div>
+    <div class="flex text-wrapper">
+    	<div class="flex text-item first-item">	
+          <div class="flex text-head">
+            <div class="flex text-head-img-wrapper">
+            	<img class="text-head-img lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/how-it-works-1.png" loading="lazy"/>
+            </div>
+            <div class="text-head-title fox-uppercase">
+              You subscribe
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="text-content-text">
+               Feel your belly gurgle with excitement, hit that button, and let us know where you want your box delivered! 
+            </div>
+          </div>
+      </div>
+      <div class="flex text-item second-item">	
+          <div class="flex text-head">
+            <div class="flex text-head-img-wrapper">
+            	<img class="text-head-img lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/how-it-works-2.png" loading="lazy"/>
+            </div>
+            <div class="text-head-title fox-uppercase">
+              We prepare
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="text-content-text">
+               Get your chopsticks ready while we pick out delicious limited edition ramen packs. Your box will reach you in the next 2-6 days.
+            </div>
+          </div>
+      </div>
+      <div class="flex text-item third-item">	
+          <div class="flex text-head">
+            <div class="flex text-head-img-wrapper">
+            	<img class="text-head-img lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/how-it-works-3.png" loading="lazy"/>
+            </div>
+            <div class="text-head-title fox-uppercase">
+              You <br>dig-in
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="text-content-text">
+               Where are we traveling tonight, chef? South Korea? Taiwan? Oh, Japan? Then don’t forget to say itadakimasu before you get slurpin’!
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="content-bottom-image"></div>
+  </div>
+</div>
+
+{%- endif -%}
+
+{%- if section.settings.enable_on_desktop == true -%}
+
+<style>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+  
+  #{{section.id}}.desktop .content-heading {
+    background: #e84c35;
+    padding-top: 70px;
+  }
+  #{{section.id}}.desktop .flex-container {
+    display: flex;
+    justify-content: center;
+    background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/how-it-works-desktop.jpg) center bottom no-repeat;
+    padding: 0 0 100px 0;
+  }
+  #{{section.id}}.desktop .slogan {
+    font-size: 32px;
+    line-height: 32px;
+    color: #FFE091;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 30px 0 30px 0;
+    text-align: right;
+  }
+  #{{section.id}}.desktop .product-name {
+    font-family: 'Potta One', cursive;
+    font-size: 70px;
+    line-height: initial;
+    color: #FFFFFF;
+    font-weight: 900;
+    text-transform: uppercase;
+    max-width: 290px;
+    text-align: right;
+    margin-left: -130px;
+  }
+  #{{section.id}}.desktop .title {
+    font-size: 32px;
+    line-height: 43px;
+    color: #E84C35;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    padding: 40px 0 30px 0;
+    width: 100%;
+    background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg) center bottom no-repeat;
+}
+  }
+  #{{section.id}}.desktop .main-image-wrapper {
+    align-items: center;
+  }
+  #{{section.id}}.desktop .text-wrapper {
+    font-size: 18px;
+    line-height: 24px;
+    color: #323050;
+    font-weight: initial;
+    max-width: 100%;
+    padding: 30px 0 30px 30px;
+    flex-flow: row;
+    max-width: 1100px;
+    margin: auto;
+    align-items: start;
+  }
+  #{{section.id}}.desktop .text-item {
+    width: 100%;
+    padding: 0 30px;
+  }
+  #{{section.id}}.desktop .text-head {
+    font-size: 24px;
+    line-height: 32px;
+    color: #E84C35;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  #{{section.id}}.desktop .text-head-title {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 15px 20px 15px;
+  }
+  #{{section.id}}.desktop .text-content-text {
+    font-size: 18px;
+    line-height: 24px;
+    color: #323050;
+    font-weight: initial;
+    padding: 0 15px 0 15px;
+  }
+  #{{section.id}}.desktop .text-head-img {
+    width: 300px;
+  }
+  
+  @media only screen and (max-width: 579px){
+    #{{section.id}}.desktop .text-head-title {
+      padding: 0;
+    } 
+    #{{section.id}}.desktop .text-head {
+      justify-content: left;
+    }
+   }
+  @media only screen and (max-width: 400px){
+	#{{section.id}}.desktop .flex-container {
+      justify-content: start;
+    }
+  }
+  	
+</style>
+
+<div id="{{section.id}}" class="desktop section-premium-product fox-hide--small">
+  <div class="wrapper">
+    <div class="flex title fox-uppercase">
+     {{ section.settings.section_name }}
+    </div>
+    <div class="flex text-wrapper">
+    	<div class="flex text-item">	
+          <div class="flex text-head">
+            <div class="flex text-head-img-wrapper">
+            	<img class="text-head-img lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/premium-1.jpg" loading="lazy"/>
+            </div>
+            <div class="text-head-title fox-uppercase">
+              Authentic Flavors
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="text-content-text">
+              Every bite will transport you to the most authentic noodle places all over East Asia, just as if you were slurping your worries away right in a cozy diner. The difference? No need for a long flight - get that authentic experience right at your own home!  
+            </div>
+          </div>
+      </div>
+      <div class="flex text-item">	
+          <div class="flex text-head">
+            <div class="flex text-head-img-wrapper">
+            	<img class="text-head-img lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/premium-2.jpg" loading="lazy"/>
+            </div>
+            <div class="text-head-title fox-uppercase">
+              Hassle-free meal
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="text-content-text">
+               Forget the lengthy process! While you focus on being awesome, we assemble a personalized monthly box for you and deliver it straight to your doorstep. Get your chopsticks ready - your noodles will be ready in no time!
+            </div>
+          </div>
+      </div>
+      <div class="flex text-item third-item">	
+          <div class="flex text-head">
+            <div class="flex text-head-img-wrapper">
+            	<img class="text-head-img lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/premium-3.jpg" loading="lazy"/>
+            </div>
+            <div class="text-head-title fox-uppercase">
+              Unique flavors
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="text-content-text">
+				There’s no need to stick to the classic flavors. Broaden your taste horizons by trying out 12 new unique flavors each month! Treat every meal as a new exciting adventure and see what unique tastes you’re the most fascinated by.
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="content-bottom-image"></div>
+  </div>
+</div>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Premium product",
+  "class": "premium-product",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Premium product"
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_mobile",
+      "label": "Enable on mobile",
+      "default": false
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_desktop",
+      "label": "Enable on desktop",
+      "default": false
+    },
+	{
+      "type": "text",
+      "id": "section_name",
+      "label": "Section name",
+      "default": "Premium product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium product",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,323 @@
+{% comment %}
+******************************************
+	Info:
+		Custom contact-us 2 section for product page.
+
+	Author: Zilvinas Vaisnoras
+    Original uthor: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+{%- if section.settings.enable_on_mobile == true -%}
+<style>
+  
+   #{{section.id}}.mobile {
+     background: #454466;
+     margin-top: -35px;
+   }
+  
+  #{{section.id}}.mobile .title{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase; 
+    padding: 30px 0 0px 0;
+    margin-bottom: 0;
+  }
+  
+  #{{section.id}}.mobile .wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #{{section.id}}.mobile .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: middle;
+    gap: 10px;
+  }
+  
+  #{{section.id}}.mobile .content img{
+   	width: 45%; 
+    height: 172px;
+    padding: 20px;
+    object-fit: contain;
+  }
+  
+  #{{section.id}}.mobile .info-section{
+   	display: flex;
+    width: 55%;
+    flex-direction: column;
+  }
+  
+  #{{section.id}}.mobile .info-section li{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 32px;
+  }
+  
+  #{{section.id}}.mobile .info-section ul{
+  	margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #{{section.id}}.mobile .info-section button{
+    font-family: 'Nunito';
+    background: #EFBD3F;
+	border-radius: 360px;
+    height: 42px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    border-width: 0;
+    max-width: 171px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FFFFFF;
+  }
+  
+  #{{section.id}}.mobile .info-section button:active {
+    background: #454466;
+  }
+  
+  #{{section.id}}.mobile .image {
+  	width: 100%;
+    margin-top: -150px;
+    position: relative;
+    z-index: 0;
+  }
+  
+  @media only screen and (min-width: 991px){
+    #{{section.id}}.mobile .wrapper{
+     	max-width: 600px;
+      	margin-left: auto;
+      	margin-right: auto;
+    }
+  }
+  
+  @media only screen and (max-width: 400px){
+    #{{section.id}}.mobile .content{
+      flex-direction: column;
+    }
+    
+  }
+
+  @media all and (max-width: 767px){
+    #{{section.id}}.mobile .content .info-section ul {
+      padding-left: 0
+    }
+  }
+  
+
+</style>
+
+
+<div id="{{section.id}}" class="mobile fox-hide--medium-up">
+  <div class="wrapper">
+    <h2 class="title"><span>We’re here to help</span></h2>
+    <div class="content">
+      <img class="fox-hide--medium-up" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/contact-us-main.png"/>
+      <img class="fox-hide--small" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/contact-us-main.png"/>
+      <div class="info-section">
+        <ul>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#EFBD3F" stroke="#EFBD3F"/></svg>
+            24/7 Customer Support</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#EFBD3F" stroke="#EFBD3F"/></svg>
+            Fast 2-6 day delivery</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#EFBD3F" stroke="#EFBD3F"/></svg>
+            100% Satisfaction</li>
+        </ul>
+        <button>CONTACT US</button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img class="image" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/contact-us-bg.jpg" loading="lazy"/>
+  </div>
+</div>
+
+{%- endif -%}
+
+{%- if section.settings.enable_on_desktop == true -%}
+
+<style>
+  
+   #{{section.id}}.desktop {
+     background: #454466;
+     margin-top: -36px;
+     background: #E84C35 url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/how-it-works-desktop.jpg) center bottom no-repeat;
+     background-size: contain;
+     padding: 40px 0 100px 0;
+     margin-top: 40px;
+   }
+  
+  #{{section.id}}.desktop .title{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 0 20px 0;
+    background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg) center bottom no-repeat;
+  }
+  
+  #{{section.id}}.desktop .wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #{{section.id}}.desktop .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: middle;
+    gap: 10px;
+  }
+  
+  #{{section.id}}.desktop .content img{
+   	width: 45%; 
+    height: fit-content;
+  }
+  
+  #{{section.id}}.desktop .info-section{
+   	display: flex;
+    width: 55%;
+    flex-direction: column;
+  }
+  
+  #{{section.id}}.desktop .info-section li{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  #{{section.id}}.desktop .info-section ul{
+  	margin-left: auto;
+    margin-right: auto;
+    min-width: 400px;
+  }
+  
+  #{{section.id}}.desktop .info-section button {
+    /*background: #FFFFFF;
+	border-radius: 360px;
+    height: 42px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    border-width: 0;
+    max-width: 171px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;*/
+    width: 60%;
+    background: no-repeat;
+    border: none;
+    margin: auto;
+  }
+  
+   #{{section.id}}.desktop .info-section button img {
+     width: 181px
+   }
+  
+  #{{section.id}}.desktop .info-section button:active {
+    background: #454466;
+  }
+  
+  #{{section.id}}.desktop .image {
+  	width: 100%;
+    margin-top: -100px;
+    position: relative;
+    z-index: 0;
+  }
+  
+  @media only screen and (min-width: 991px){
+    #{{section.id}}.desktop .wrapper{
+     	max-width: 600px;
+      	margin-left: auto;
+      	margin-right: auto;
+    }
+  }
+  
+
+</style>
+
+
+<div id="{{section.id}}" class="desktop fox-hide--small">
+  <div class="wrapper">
+    <h2 class="title"><span>We’re here to help</span></h2>
+    <div class="content">
+      <img class="fox-hide--medium-up" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/contact-us-main.png"/>
+      <img class="fox-hide--small" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/contact-us-main.png"/>
+      <div class="info-section">
+        <ul>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#EFBD3F" stroke="#EFBD3F"/></svg>
+            24/7 Customer Support</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#EFBD3F" stroke="#EFBD3F"/></svg>
+            Fast 2-6 day delivery</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#EFBD3F" stroke="#EFBD3F"/></svg>
+            100% Satisfaction</li>
+        </ul>
+        <button>
+          <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/contact-us-desktop-button.svg" loading="lazy"/>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- endif -%}
+
+<script>
+  $("#{{section.id}} button").click(function() {
+    window.location.assign("https://myramenbox.myshopify.com/pages/contact-us");
+  });
+  
+  
+</script>
+
+{% schema %}
+{
+  "name": "Product - Contact Us 2",
+  "class": "product-contact-us-section",
+  "settings": [
+	{
+      "type": "checkbox",
+      "id": "enable_on_mobile",
+      "label": "Enable on mobile",
+      "default": false
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_desktop",
+      "label": "Enable on desktop",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product - Contact Us 2",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

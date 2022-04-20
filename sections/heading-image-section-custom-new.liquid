@@ -1,0 +1,168 @@
+{% comment %}
+******************************************
+	Info:
+		Custom image with heading section. Mobile only. Hidden on desktop.
+
+	Author: Zilvinas Vaisnoras
+    Original author: Edvinas Kilbauskas
+    Date created: 2021-12-20
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+{%- if section.settings.enable_on_mobile == true -%}
+  <style>
+
+    #{{section.id}}.mobile .content {
+      padding: 20px 0 0 0;
+    }
+    #{{section.id}}.mobile .title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #464566; 
+      margin-bottom: 0;
+    }
+
+    #{{section.id}}.mobile .divider {
+      margin-bottom: 20px;
+      margin-top: -20px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      top: -10px;
+    }
+
+    #{{section.id}}.mobile .wrapper {
+      padding: 0 30px 0 30px;
+    }
+
+    #{{section.id}}.mobile .image {
+      width: 100%;
+    }
+
+  </style>
+
+  <div id="{{section.id}}" class="mobile section-heading-image-section-custom-new fox-hide--medium-up">
+    <div class="wrapper">
+      <h2 class="title"><span>{{ section.settings.section_name }}</span></h2>
+      <div class="content">
+        <img class="image lazyload" data-src="{{ section.settings.main_image_mobile | img_url: 'original' }}" loading="lazy"/>
+      </div>
+    </div>
+    {%- comment -%}
+    	{%- render 'divider-mobile-red', extra_styles_img: 'margin-top: -14px!important;' -%}
+    {%- endcomment -%}
+  </div>
+
+{%- endif -%}
+
+{%- if section.settings.enable_on_desktop == true -%}
+  <style>
+
+    #{{section.id}}.desktop .wrapper {
+      margin: 70px 0 0 0;
+    }
+
+    #{{section.id}}.desktop .content {
+      padding: 20px 0 30px 0;
+      flex-flow: row;
+      justify-content: space-around;
+      align-items: start;
+    }
+    #{{section.id}}.desktop .title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 46px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E84C35; 
+      padding-bottom: 10px;
+      background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg) center bottom no-repeat;
+    }
+
+    #{{section.id}}.desktop .divider {
+      margin-bottom: 20px;
+      margin-top: -20px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      top: -10px;
+    }
+
+  </style>
+
+  <div id="{{section.id}}" class="desktop section-heading-image-section-custom-new fox-hide--small">
+    <div class="wrapper">
+      <h2 class="title"><span>{{ section.settings.section_name }}</span></h2>
+      <div class="flex content">
+        <img class="flex image lazyload" data-src="{{ section.settings.main_image_desktop_left | img_url: 'original' }}" loading="lazy"/>
+        <img class="flex image lazyload" data-src="{{ section.settings.main_image_desktop | img_url: 'original' }}" loading="lazy"/>
+        <img class="flex image lazyload" data-src="{{ section.settings.main_image_desktop_right | img_url: 'original' }}" loading="lazy"/>
+      </div>
+    </div>
+    {%- render 'divider-desktop', extra_styles_img: 'margin-top: -37px;' -%}
+  </div>
+{%- endif -%}
+
+{%- render 'section-background-end' -%}
+{% schema %}
+  {
+    "name": "Product - Head&pic new",
+    "class": "heading-image-section-custom-new",
+    "settings": [
+	{
+      "type": "header",
+      "content": "Product - Heading & Image new"
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_mobile",
+      "label": "Enable on mobile",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_desktop",
+      "label": "Enable on desktop",
+      "default": false
+    },
+	{
+      "type": "text",
+      "id": "section_name",
+      "label": "Section name",
+      "default": "WHAT'S INSIDE"
+    },
+	{
+      "type": "image_picker",
+      "id": "main_image_mobile",
+      "label": "Main image mobile"
+    },
+	{
+      "type": "image_picker",
+      "id": "main_image_desktop",
+      "label": "Main image desktop"
+    },
+	{
+      "type": "image_picker",
+      "id": "main_image_desktop_left",
+      "label": "Main image desktop left"
+    },
+	{
+      "type": "image_picker",
+      "id": "main_image_desktop_right",
+      "label": "Main image desktop right"
+    }
+    ],
+    "presets": [
+      {
+        "name": "Product - Heading & Image new",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

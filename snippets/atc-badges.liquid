@@ -1,0 +1,24 @@
+{% comment %} 
+    Edvinas Kilbauskas
+    File is included in "snippets/product-single-form-inner.liquid"
+{% endcomment %}
+
+{% liquid
+	case product.vendor
+    	when "INDYPREP"
+			assign badge_src = 'MS_atc_badge_svg.svg' | asset_url
+        else
+        	assign badge_src = 'W45_RAMEN_BADGE_DESKTOP_DOMAS_2.png' | asset_url
+    endcase
+    
+    if product.type == "subscription box"
+    	assign badge_src = 'W45_RAMEN_BADGE_DESKTOP_DOMAS_2.png' | asset_url
+    endif
+%}
+
+<source srcset="{{ badge_src | img_url: '200x' }}" media="(min-width: 767px)">
+<div class="atc-badges-img-wrapper">
+  <img class="atc-badges-img"
+      src="{{ badge_src }}"
+      alt="Badges">
+</div>

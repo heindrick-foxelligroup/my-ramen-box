@@ -1,0 +1,21 @@
+<style>
+  
+  .desktop.divider-section-new{% if section_id != '' %}.{{ section_id }}{% endif %} {
+    {{ extra_styles_div }}
+  }
+
+  .desktop.divider-section-new{% if section_id != '' %}.{{ section_id }}{% endif %} .divider{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    {{ extra_styles_img }}
+  }
+  
+  .desktop.divider-section-new.reverse {
+    transform: scaleX(-1);
+  }
+</style>
+
+<div class="desktop divider-section-new fox-hide--small {% if section_id != '' %} {{ section_id }}{% endif %}{% if extra_class_div != '' %} {{ extra_class_div }}{% endif %}">
+  <img class="desktop divider lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern-desktop.svg" loading="lazy"/>
+</div>

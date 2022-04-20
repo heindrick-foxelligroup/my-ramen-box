@@ -1,0 +1,424 @@
+{% comment %}
+******************************************
+	Info:
+		Custom form customizer for ramen subscription product. 
+		Rewamps whole top section of the product page.
+		
+		* Adds payment badges
+		* Changes ATC badges
+		* Adds review stars
+		* Changes ATC button design
+		* Hides quantity selector
+		* Adds mobile heading
+		* Removes images gallery on desktop
+		
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+
+    Last changes: 2022-04-07 Skaidrius
+
+    Included in: templates/product.subscription-product.json
+******************************************
+
+
+{% endcomment %}
+
+<style>
+  
+  .top-image-mobile { 
+    padding: 38px 33px 10px 33px; }
+  
+  .title-slogan h2 {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: none;
+    text-align: center;
+    color: #FFE091;
+    line-height: 30px;
+    margin: 0;
+  }  
+
+  .product-single__title{
+    padding-top: 0!important;
+  }
+  
+  @media all and (min-width: 768px){
+    
+    #template--15183304065208__1640036146f852a160.desktop .title {
+      margin-top: 50px; 
+    }
+    
+    .title-slogan { margin-top: 30px; }
+    
+    .title-slogan h2 {
+      font-size: 22px;
+      line-height: 32px;      
+      color: #E84C35;
+    }
+    
+    .product-single__title{
+      padding-top: 6px!important;
+  	}
+  }
+
+
+  /* for desktop */
+  @media only screen and (min-width: 991px){
+    .product-single__photos,
+    .atc-badges-img-wrapper,
+    .review-stars-mobile,
+    .rc-container-wrapper,
+    .qty-box,
+    .lh1.gutter-ele-top.gutter-ele-bottom.margin0,
+    .top-image-mobile,
+    .product-price-wrap {
+      display: none; 
+    }
+    
+    .lnr-shopping-cart{
+     	margin-right: 10px; 
+    }
+    
+    .add-cart-btn{
+      /*transition: none;
+      background: #323050;
+	  border-radius: 360px;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 33px;
+      text-align: center;
+	  border-width: 0;
+      width: 100%;
+      color: #FFFFFF;*/
+      width: 100%;
+      text-align: center;
+      background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/act_main.svg) center center no-repeat;
+      border: none;
+      height: 86px;
+      font-size: 24px;
+      padding: 0 0 8px 0;
+    }
+    
+    .add-cart-btn:hover {
+      background: #ccc url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/act_main.svg) center center no-repeat;
+      border-radius: 10px;
+    }
+    
+    .form-background-desktop{
+      max-width: 1200px;
+      position: absolute;
+    }
+    
+    .blur-edges:before{
+      position: absolute;
+      width: 1200px;
+      height: 650px;
+      content: '';
+      box-shadow: inset -1px 35px 35px 25px white;
+      z-index: -1;
+    }
+    
+    .journey-starts-here-desktop{
+	  width: 100%;
+    }
+    
+    .payment-badges .cart__payment-badges img{
+   	 min-width: 0;
+     min-height: auto;
+     border-radius: 4px;
+  }
+  
+  .payment-badges  .cart__payment-badges {
+      gap: 5px; 
+    }
+  
+   .payment-badges .cart__payment-badges-divider {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+   .payment-badges{
+     width: 100%;
+   	flex-direction: column;
+  }
+
+   .payment-badges .cart__payment-badges {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 13px;
+     
+    }
+
+   .payment-badges .cart__payment-badges img {
+      box-shadow: 0px 0px 13px 0px #00000033;
+    }
+
+    .payment-badges .cart__payment-badges-divider .line {
+      border-bottom: 0.5px solid #454466;
+      flex: 1;
+      margin-bottom: 4px;
+    }
+
+    .payment-badges .cart__payment-badges-divider .text {
+      font-family: "Avenir Next", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 11px;
+      flex-basis: auto;
+      color: #454466;
+      margin: 0 8px;
+    }
+
+   .payment-badges .cart__payment-badges {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 13px;
+    }
+    
+    .product-price{
+     	display: none; 
+    }
+    
+    .product-single__title{
+      font-style: normal;
+      font-weight: 800!important;
+      font-size: 28px;
+      line-height: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #454466; 
+    }
+
+
+    
+    .col-xs-12.col-md-6.gutter-ele-top-tbs{
+      width: 40%;
+      /*padding-right: 10%;*/
+      float: right;
+      height: 650px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .product-single{
+      	max-width: 1200px;
+      	width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+      
+      .product-template-section{
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+	
+        
+    .review-stars-desktop{
+     	display: block;
+      	margin-left: auto;
+      	margin-right: auto;
+    }
+    
+    .product-badges-desktop .badges {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 25px;
+
+    }
+
+    .product-badges-desktop .badges  img{
+      max-width: 28%; 
+    }
+  }
+  
+  /* for mobile */
+  @media only screen and (max-width: 990px){
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+
+    .review-stars-desktop,
+    .journey-starts-here-desktop,
+    .form-background-desktop,
+	.main-product-reviews-section,
+    .main-product-tabs-section,
+    .qty-box,
+    .atc-badges-img-wrapper,
+    .rc-container-wrapper,
+    .product-price,
+    .lnr-zoom,
+    .pg__thumbs,
+    .breadcrumbs,
+    .lh1.gutter-ele-top.gutter-ele-bottom.margin0,
+    .product-single__photos,
+    .product-form__item button.add-cart-btn i
+    {
+      display: none !important; 
+    }
+    
+    .top-image-mobile {
+      width: 100%;
+    }
+    
+    .modern-seperator-mobile {
+      width: 100%;
+      top: -10px;
+      z-index: 1;
+    }
+    
+    .col-xs-12.col-md-6.gutter-ele-top-tbs {
+      /*background: url('https://cdn.shopify.com/s/files/1/0598/9649/6312/files/price-bg-top-mobile.png') center bottom no-repeat;*/
+      background: url('https://cdn.shopify.com/s/files/1/0598/9649/6312/files/price-bg-top-mobile.svg?v=1641410477') center bottom no-repeat;
+      margin-top: -18px;
+      padding: 25px 0 45px 0;
+    }
+    
+    .product-single__title{
+      font-style: normal;
+      font-weight: 800 !important;
+      font-size: 24px;
+      line-height: 26px;
+      /* identical to box height, or 109% */
+
+      text-align: center;
+      text-transform: uppercase;
+
+      /* purple grey */
+
+      color: #FFFFFF;
+
+    }
+    
+    .add-cart-btn {
+      background: url('https://cdn.shopify.com/s/files/1/0598/9649/6312/files/ATC-button.svg') center 7px no-repeat;
+      width: 100%; 
+      transition: none !important;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 27px;
+      text-align: center;
+      color: #323050;
+	  height: 88px;
+      border: none;
+      /*margin: -23px 0px 30px 0;*/
+    }
+    
+    .atc_icon_cart {
+    	padding: 0 10px 4px 0;
+    }
+    
+    
+    .mobile-badges{
+      margin-right: auto;
+      margin-left: auto;
+    }
+    
+    .badges{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 25px auto -25px auto;
+      width: 90%;
+    }
+    
+    .badges img{
+      max-width: 30%;
+      height: auto;
+      object-fit: contain;
+    }
+  
+    .review-stars-mobile{
+      	margin-top: -7px;
+     	display: block;
+      	margin-left: auto;
+      	margin-right: auto;
+      	margin-bottom: -20px;
+    }
+    
+  }
+  
+</style>
+
+{% capture badges_html %}
+	<div class="badges">
+      <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18678.png?v=1637853821">
+      <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18679.png?v=1637853834">
+      <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18680.png?v=1637853846">  
+	</div>
+{% endcapture %}
+
+{% capture payment_badges_html %}
+<div class="payment-badges">
+  <div class="w100 cart__payment-badges-divider">
+    <div class="line"></div>
+    <div class="text">GUARANTEED SAFE CHECKOUT</div>
+    <div class="line"></div>
+  </div>
+  <div class="cart__payment-badges ">
+    <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/payment1.svg?v=1641455201" alt="Visa" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/payment2.svg?v=1641455201" alt="Mastercard" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/payment3.svg?v=1641455201" alt="Paypal" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/payment4.svg?v=1641455201" alt="Amex" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/payment5.svg?v=1641455201" alt="Apple Pay" loading="lazy">
+    <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/payment6.svg?v=1641455201" alt="Discover" loading="lazy">
+  </div>
+</div>
+{% endcapture %}
+
+{%- capture cart_icon_atc_uri -%}
+	data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAzMCAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI2Ljk0NSAxNS4zMDE0TDI5LjMzNjIgNC43Mzg4NkMyOS41MDg5IDMuOTc2MjIgMjguOTMxNSAzLjI1IDI4LjE1MjQgMy4yNUg4LjI4Mzg3TDcuODIwMjIgMC45NzQ0OTJDNy43MDQ2OSAwLjQwNzMxNiA3LjIwNzU0IDAgNi42MzA4MyAwSDEuNDQ0NDlDMC43NzM5OTYgMCAwLjIzMDQ2OSAwLjU0NTY0NSAwLjIzMDQ2OSAxLjIxODc1VjIuMDMxMjVDMC4yMzA0NjkgMi43MDQzNiAwLjc3Mzk5NiAzLjI1IDEuNDQ0NDkgMy4yNUg0Ljk3OTQ2TDguNTMyOSAyMC42OTAxQzcuNjgyNzggMjEuMTgwOSA3LjEwOTkyIDIyLjEwMTEgNy4xMDk5MiAyMy4xNTYyQzcuMTA5OTIgMjQuNzI2OCA4LjM3ODE2IDI2IDkuOTQyNjMgMjZDMTEuNTA3MSAyNiAxMi43NzUzIDI0LjcyNjggMTIuNzc1MyAyMy4xNTYyQzEyLjc3NTMgMjIuMzYwMyAxMi40NDkyIDIxLjY0MTIgMTEuOTI0MyAyMS4xMjVIMjIuNTI5MUMyMi4wMDQzIDIxLjY0MTIgMjEuNjc4MiAyMi4zNjAzIDIxLjY3ODIgMjMuMTU2MkMyMS42NzgyIDI0LjcyNjggMjIuOTQ2NCAyNiAyNC41MTA5IDI2QzI2LjA3NTMgMjYgMjcuMzQzNiAyNC43MjY4IDI3LjM0MzYgMjMuMTU2MkMyNy4zNDM2IDIyLjAzMDMgMjYuNjkxNyAyMS4wNTc0IDI1Ljc0NjIgMjAuNTk2NkwyNi4wMjUzIDE5LjM2MzlDMjYuMTk3OSAxOC42MDEyIDI1LjYyMDUgMTcuODc1IDI0Ljg0MTQgMTcuODc1SDExLjI2MzdMMTAuOTMyNyAxNi4yNUgyNS43NjEyQzI2LjMyOCAxNi4yNSAyNi44MTk0IDE1Ljg1NjIgMjYuOTQ1IDE1LjMwMTRaIiBmaWxsPSIjMzIzMDUwIi8+Cjwvc3ZnPgo=
+{%- endcapture -%}
+
+<script>
+  	
+    $(".product-single__title").before("<div class='title-slogan'><h2>12 Premium Ramen Each Month!</h2></div>");
+
+  	// mobile
+    $(".pos-sticky--template--15183304065208__main").after("<img class='top-image-mobile' src='https://cdn.shopify.com/s/files/1/0598/9649/6312/files/banner-mobile.png?v=1649321720'/>");
+  	$(".top-image-mobile").after("<span><img class='fox-relative fox-hide--medium-up modern-seperator-mobile' src='https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg'/></span>");
+    $(".product-single__title").after("<img class='review-stars-mobile' src='https://cdn.shopify.com/s/files/1/0598/9649/6312/files/review-stars.svg'/>");
+    $(".product-form__item button.add-cart-btn i").before(`<span class="atc_icon_cart"><img src="{{ cart_icon_atc_uri }}" loading="lazy"></span>`);
+    $(".col-xs-12.col-md-6.gutter-ele-top-tbs").after(`<div class="fox-hide--medium-up mobile-badges">{{ badges_html }}</div>`);
+    $(".product-single__title").text(function(index, text){return text.replace("Ramen", "My Ramen");});
+    $(".add-cart-btn").text(function(index, text){return text.replace("Add to cart", "Add to bag");});
+  
+    // desktop
+  	$(".product-form__item").after(`<div class="fox-hide--small"> {{ payment_badges_html }}</div>`);
+  	$(".product-single").prepend("<div class='blur-edges'><img class='form-background-desktop lazyload' src='https://cdn.shopify.com/s/files/1/0598/9649/6312/files/banner-desktop.jpg?v=1649321719' loading='lazy' /></div>");
+    $(".title-slogan").before("<div class='journey-starts-here-desktop'><img class='lazyload' src='https://cdn.shopify.com/s/files/1/0598/9649/6312/files/slogan-desktop.png?v=1649321720' loading='lazy' /></div>");
+    //$(".product-single__title").before("<div class='journey-starts-here-desktop'>Your journey of flavors starts here…</div>");
+  	$(".product-single__title").after("<img class='review-stars-desktop' src='https://cdn.shopify.com/s/files/1/0598/9649/6312/files/review_stars_main.svg'/>");
+  	$(".payment-badges").after(`<div class="product-badges-desktop fox-hide--small"> {{ badges_html }}</div>`);
+    $(".product-form__item ");
+  	
+  
+</script>
+
+
+{% schema %}
+{
+  "name": "Product - Customizer",
+  "class": "product-customizer-section",
+  "settings": [
+   
+  ],
+  "presets": [
+    {
+      "name": "Product - Customizer",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

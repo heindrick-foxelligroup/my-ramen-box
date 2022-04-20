@@ -1,0 +1,97 @@
+{% comment %}
+******************************************
+	Info:
+		Custom image with text section. Mobile only.
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<div id="{{section.id}}" class="fox-hide--medium-up">
+  <div class="wrapper">
+    <img class="divider lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18597.png?v=1637853707"/>
+    <h2 class="title"><span>Our Story</span></h2>
+    
+    <div class="content">
+      <p>It was the love for adventures that led us to the greatest discovery of all - <b>the heart-warming ramen</b>. Soon we realized that it doesn’t take a chef to have that satisfying bowl of ramen. There’s a quick and <b>easy way to explore this exotic world of flavors</b> - instant noodles! 
+        <br>
+        <br>
+        The only problem was, we couldn’t find the same quality <i>silky, chewy, mouthwatering instant noodles</i> in our supermarkets at home. This is how <b>MY RAMEN BOX</b> was born!
+      </p>
+      <div class="subtitle"><p>There must be more ramentics like us, we thought.</p></div>
+      <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/22.10.png?v=1637853671"/>
+      <p>So, <b>we decided to collaborate with local instant noodle suppliers</b> to create an authentic food experience for our customers, just like the one we were looking for!
+        <br>
+        <br>
+        Every month, a new adventure in the big wide world of ramen noodles... <b>Join us!</b></p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  #{{section.id}} .title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #454466; 
+    margin-bottom: 20px;
+  }
+  
+  #{{section.id}} .divider{
+   	width: 100vw;
+    margin-left: -15px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+  
+  #{{section.id}} .wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  #{{section.id}} .content p{
+    font-size: 18px;
+    line-height: 24px;
+    text-align: justify;
+    color: #323050;
+  }
+  
+  #{{section.id}} .content img{
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  #{{section.id}} .subtitle p{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #E84C35;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product - Text & Image",
+  "class": "product-text-image-section",
+  "settings": [
+   
+  ],
+  "presets": [
+    {
+      "name": "Product - Text & Image",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

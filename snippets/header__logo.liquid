@@ -1,0 +1,18 @@
+{%- assign logo_size = settings.header_mobile_logo_size | default: 'medium' -%}
+<div class="header__logo">
+    {%- if settings.show_logo and settings.logo != blank -%}
+	<a href="{{ routes.root_url }}" class="header__logo__image dib" title="{{ shop.name | escape }}">
+        {%- comment -%}	
+	    <img data-src="{{ settings.logo | img_url: '200x74' }}" sizes="(max-width: 991px) 0,{{ settings.logo.width }}px" alt="{{ settings.logo.alt | default: shop.name | escape }}" class="img-responsive lazyload" {% render 'img-one-pixel' %}>
+      	<img data-src="{{ 'MS_logo_svg.svg' | asset_url }}" sizes="(max-width: 991px) 0,{{ settings.logo.width }}px" alt="{{ settings.logo.alt | default: shop.name | escape }}" class="img-responsive lazyload" {% render 'img-one-pixel' %}>
+      {%- endcomment -%}
+	</a>
+	{%- else -%}
+	<a class="header__logo__link" href="{{ routes.root_url }}" title="{{ shop.name | escape }}">
+        <img src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/ramenbox1-01.svg?v=1638351725"
+         sizes="(max-width: 991px) 0,{{ settings.logo.width }}px" 
+         alt="{{ settings.logo.alt | default: shop.name | escape }}" 
+         class="img-responsive" {% render 'img-one-pixel' %}>
+    </a>
+	{%- endif -%}
+</div>

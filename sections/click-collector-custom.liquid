@@ -1,0 +1,181 @@
+{% comment %}
+******************************************
+	Info:
+		Collects all user clicks on page while page is still loading (DOM not ready).
+		After page is full loaded this script will click elements that were clicked while page was loading.
+		
+
+	Author: Zilvinas Vaisnoras
+    Date created: 2022-03-17
+    Included in: subscription templates such as templates/product.subscription-product.json
+
+    Last changes: 2022-04-12
+******************************************
+{% endcomment %}
+
+{%- if section.settings.enable_section == true -%}
+<div class="overlay-atc-click"></div>
+<style>
+  .overlay-atc-click {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(255,255,255,0.8) url('{{ 'lg-loading.gif' | asset_url}}') center no-repeat;
+  }
+  
+  /* Turn off scrollbar when body element has the loading class */
+  body.loading{
+    overflow: hidden;   
+  }
+  /* Make spinner image visible when body element has the loading class */
+  body.loading .overlay-atc-click{
+    display: block;
+  }
+  
+  /* Hide VARIANT ERROR alert */
+  div.alert-danger {
+	display: none!important;
+  }
+</style>
+
+<script>
+  function docReady(fn) {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      setTimeout(fn, 1);
+    } else {
+      document.addEventListener("DOMContentLoaded", fn);
+    }
+  }
+  
+  function writeSession(name, value) {
+    localStorage.setItem(name, value);
+  }
+
+  function atcClickedWriteSession() {
+    writeSession('ATC_clicked','YES');
+  }
+  
+  function abortAllPendingAjaxs() {
+    var xhrPool = [];
+    $(document).ajaxSend(function(e, jqXHR, options){
+      xhrPool.push(jqXHR);
+    });
+    $(document).ajaxComplete(function(e, jqXHR, options) {
+      xhrPool = $.grep(xhrPool, function(x){return x!=jqXHR});
+    });
+    window.abortAllMyAjaxRequests = function() {
+      $.each(xhrPool, function(idx, jqXHR) {
+        jqXHR.abort();
+      });
+    };
+  }
+  
+  function waitForAllScriptsToBeLoaded() {
+    new MutationObserver((mutationsList, observer) => {
+        for (var mutation of mutationsList) 
+            if (mutation.type === 'childList') 
+                Array.from (mutation.addedNodes)
+                    .filter (node => node.tagName === 'DIV')
+                    .forEach (divElement => {
+                        console.log('Zilvinas >> started loading scripts');
+                        divElement.addEventListener ('load', () => { 
+                             console.log(divElement);
+                        })
+                    })
+    }).observe(document, { attributes: false, childList: true, subtree: true });
+  }
+  
+  function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
+
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                resolve(document.querySelector(selector));
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+  }
+  
+  function showLoadingCircle() {
+    document.querySelector('body').classList.add('loading');
+  }
+  
+  function hideLoadingCircle() {
+    document.querySelector('body').classList.remove('loading');
+  }
+
+  docReady(function() {
+    var proceedCounter = 0;
+    if (proceedCounter === 0) {
+      //waitForAllScriptsToBeLoaded();
+
+      $(document).ajaxStop(function () {
+        //console.log('Zilvinas >>> all AJAX finshed');
+          if(localStorage.getItem('ATC_clicked') == 'YES') {
+            waitForElm('div#recharge-app').then((elm) => {
+                //console.log('Element is ready');
+                //console.log(elm);
+                writeSession('ATC_clicked','NO');
+                //hideLoadingCircle();
+                setTimeout(function() {
+                  document.querySelector('button.add-cart-btn').click();
+                }, 4000);
+            });
+            /*console.log('Zilvinas >>> DOM loading >> ' + localStorage.getItem('ATC_clicked'));
+            //abortAllPendingAjaxs();
+            writeSession('ATC_clicked','NO');
+            console.log('Zilvinas >>> DOM loading >> ' + localStorage.getItem('ATC_clicked'));
+            proceedCounter++;
+            console.log('Zilvinas >> ' + proceedCounter);
+            setTimeout(function() {
+              document.querySelector('button.add-cart-btn').click();
+            }, 3000);*/
+          }
+      });
+      
+      document.querySelector(".add-cart-btn").addEventListener("click", showLoadingCircle, false);
+      document.querySelector(".add-cart-btn").addEventListener("click", atcClickedWriteSession, false);
+      
+      document.querySelector(".section-cta-section-custom-new button").addEventListener("click", showLoadingCircle, false);
+      document.querySelector(".section-cta-section-custom-new button").addEventListener("click", atcClickedWriteSession, false);
+    }
+  });
+
+</script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Clicks collector custom",
+	"class": "clicks-collector-custom",
+    "settings": [
+	  {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable this section",
+      "default": true
+     }
+	],
+    "presets": [
+      {
+        "name": "Clicks collector custom",
+        "category": "Collection",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

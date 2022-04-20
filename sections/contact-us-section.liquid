@@ -1,0 +1,165 @@
+{% comment %}
+******************************************
+	Info:
+		Custom contact-us section for product page.
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<div id="{{section.id}}">
+  {% render 'ramen-divider' %}
+  <div class="wrapper">
+    
+    <h2 class="title"><span>We’re here to help</span></h2>
+    <div class="content">
+      <img class="fox-hide--medium-up" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18685.png?v=1637853875"/>
+      <img class="fox-hide--small" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/My_Ramen_Box_4_1.png?v=1637226496"/>
+      
+      <div class="info-section">
+        <ul>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#E84C35" stroke="#E84C35"/></svg>
+            24/7 Customer Support</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#E84C35" stroke="#E84C35"/></svg>
+            Easy & Free Returns </li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M6.35352 8.52537C6.15826 8.72063 5.84168 8.72063 5.64641 8.52537L3.76752 6.64648C3.18179 6.06075 2.23214 6.06075 1.64642 6.64648C1.06069 7.2322 1.06069 8.18186 1.64642 8.76758L4.93931 12.0605C5.5251 12.6463 6.47484 12.6463 7.06063 12.0605L15.3535 3.76758C15.9392 3.18186 15.9392 2.2322 15.3535 1.64648C14.7678 1.06075 13.8181 1.06075 13.2324 1.64648L6.35352 8.52537Z" fill="#E84C35" stroke="#E84C35"/></svg>
+            100% Satisfaction</li>
+        </ul>
+        <button>CONTACT US</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  
+  
+  
+  #{{section.id}} .title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #454466; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+
+  
+  #{{section.id}} .wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  #{{section.id}} .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: middle;
+    gap: 10px;
+  }
+  
+  #{{section.id}} .content img{
+   	width: 45%; 
+    height: fit-content;
+  }
+  
+  #{{section.id}} .info-section{
+   	display: flex;
+    width: 55%;
+    flex-direction: column;
+   
+  }
+  
+  #{{section.id}} .info-section li{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 32px;
+    color: #454466;
+  }
+  
+  #{{section.id}} .info-section ul{
+  	margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #{{section.id}} .info-section button{
+    background: #E84C35;
+	border-radius: 360px;
+    height: 42px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border-width: 0;
+    max-width: 171px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #{{section.id}} .info-section button:active{
+    background: #454466;
+  }
+  
+  @media only screen and (max-width: 990px){
+   	#{{section.id}} .ramen-divider{
+     	display: none; 
+    }
+    
+    
+      #{{section.id}} .divider{
+   	width: 100vw;
+    margin-left: -15px;
+    margin-bottom: 15px;
+  }
+  }
+  
+  @media only screen and (min-width: 991px){
+    #{{section.id}} .ramen-divider{
+     	margin-top: 40px; 
+      	margin-bottom: 40px;
+    }
+    #{{section.id}} .wrapper{
+     	max-width: 600px;
+      	margin-left: auto;
+      	margin-right: auto;
+    }
+  }
+  
+
+</style>
+
+<script>
+  $("#{{section.id}} button").click(function() {
+    window.location.assign("https://myramenbox.myshopify.com/pages/contact-us");
+  });
+  
+  
+</script>
+
+{% schema %}
+{
+  "name": "Product - Contact Us",
+  "class": "product-contact-us-section",
+  "settings": [
+   
+  ],
+  "presets": [
+    {
+      "name": "Product - Contact Us",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

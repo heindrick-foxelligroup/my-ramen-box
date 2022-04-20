@@ -1,0 +1,198 @@
+{% comment %}
+******************************************
+	Info:
+		Custom CTA button section for product page.
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<div id="{{section.id}}" class="fox-hide--medium-up">
+  <div class="wrapper">
+	<img class="image" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/uzor1.png?v=1637929755"/>
+    <div class="content">
+      <div class="text1">Embark your journey of flavors</div>
+      <div class="text2">{{ product.price | money }} / month</div>
+      <button class="button">SUBSCRIBE NOW</button>
+      <div class="badges">
+        <div class="w100 cart__payment-badges-divider">
+          <div class="line"></div>
+          <div class="text">GUARANTEED SAFE CHECKOUT</div>
+          <div class="line"></div>
+        </div>
+        <div class="cart__payment-badges ">
+          <img src="https://cdn.shopify.com/s/files/1/2987/3832/files/Group_78.png?v=1633620486" alt="Visa">
+          <img src="https://cdn.shopify.com/s/files/1/2987/3832/files/Group_81.png?v=1633620486" alt="Mastercard">
+          <img src="https://cdn.shopify.com/s/files/1/2987/3832/files/Group_70.png?v=1633620486" alt="Paypal">
+          <img src="https://cdn.shopify.com/s/files/1/0278/9903/5708/files/Group_79.png?v=1637244658" alt="Amex">
+          <img src="https://cdn.shopify.com/s/files/1/2987/3832/files/Group_68.png?v=1633620486" alt="Apple Pay">
+          <img src="https://cdn.shopify.com/s/files/1/2987/3832/files/Group_67.png?v=1633620486" alt="Discover">
+        </div>
+      </div>
+    </div>
+    <img class="image-reverse" src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/uzor1.png?v=1637929755"/>
+  </div>
+</div>
+
+
+
+<style>
+  
+  #{{ section.id }} *{
+   	background: #454466; 
+    
+  }
+  
+  #{{ section.id }}{
+   	margin-top: 20px;
+  }
+  
+  
+  
+  #{{ section.id }} .content{
+   	padding-top: 15px; 
+    padding-bottom: 10px;
+  }
+  
+  #{{ section.id }} .button{
+    font-family: Nunito, sans-serif;
+    background: #EFBD3F !important;
+    border-radius: 360px;
+    width: 100%;
+    height: 54px;
+    border-width: 0;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #323050;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }	
+  
+  #{{ section.id }} .button:active{
+    background: #ffd56a !important;
+  }	
+  
+ 
+  
+  #{{ section.id }} .text1{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+  
+  #{{ section.id }} .text2{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: lowercase;
+    color: #FFFFFF;
+
+  }
+  	
+  #{{ section.id }}	.content {
+        padding-left: 15px;
+      	padding-right: 15px;
+    }
+  	
+   #{{ section.id }} .cart__payment-badges img{
+   	 min-width: 0;
+     min-height: auto;
+     border-radius: 4px;
+  }
+  
+  #{{ section.id }}  .cart__payment-badges {
+      gap: 5px; 
+    }
+  
+   #{{ section.id }} .cart__payment-badges-divider {
+    display: flex;
+    justify-content: space-between;
+      margin-top: -26px;
+  }
+  
+  #{{ section.id }} .badges{
+   	flex-direction: column; 
+  }
+
+   #{{ section.id }} .cart__payment-badges {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 13px;
+    }
+
+   #{{ section.id }} .cart__payment-badges img {
+      box-shadow: 0px 0px 13px 0px #00000033;
+    }
+
+   #{{ section.id }} .cart__payment-badges-divider .line {
+      border-bottom: 0.5px solid #D6D9DC;;
+      flex: 1;
+      margin-bottom: 4px;
+    }
+
+   #{{ section.id }} .cart__payment-badges-divider .text {
+      font-family: "Avenir Next", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 11px;
+      flex-basis: auto;
+      color: #D6D9DC;;
+      margin: 0 8px;
+    }
+
+   #{{ section.id }} .cart__payment-badges {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 13px;
+    }
+
+
+	#{{ section.id }} .image{
+     	width: 100%;
+    }
+  
+  	#{{ section.id }} .image-reverse{
+     	width: 100%; 
+      	margin-top: 23px;
+      	transform: scaleY(-1);
+    }
+
+</style>
+
+<script>
+  
+  $("#{{section.id}} .button").last().click(function(){
+     $(".add-cart-btn").click();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product - CTA",
+  "class": "product-cta-section",
+  "settings": [
+   
+  ],
+  "presets": [
+    {
+      "name": "Product - CTA",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

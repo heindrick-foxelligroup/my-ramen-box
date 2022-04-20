@@ -1,0 +1,123 @@
+{% comment %}
+******************************************
+	Info:
+		Custom bulletpoints section for product page.
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+{% capture checkmark_svg %}
+<svg style="display: inline-block" width="24" height="24" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="19" cy="22" r="15" fill="#FFE091"/>
+<path d="M33.2665 2.32933C31.9333 1.09646 29.8191 1.32133 28.7751 2.80703L16.385 20.4388C15.2872 22.001 13.0286 22.1538 11.7305 20.7536L6.70075 15.3286C5.5133 14.0478 3.4871 14.0482 2.30011 15.3294L1.88895 15.7732C0.823197 16.9235 0.823198 18.7006 1.88895 19.8509L12.5064 31.311C13.7944 32.7012 16.0328 32.5636 17.1409 31.0261L34.4477 7.01109C35.334 5.78134 35.1636 4.0837 34.0507 3.05454L33.2665 2.32933Z" fill="#E84C35"/>
+</svg>
+{% endcapture %}
+
+<div id="{{section.id}}" >
+  {% render 'ramen-divider' %}
+
+  <div class="wrapper">
+    <h2 class="title"><span>A unique assortment delivered<br class="fox-hide--small">to your doorstep</span></h2>
+    
+    <div class="content">
+      <div class="flex">{{checkmark_svg}}<p>Delicious meal ready in just a <b>few minutes</b>;</p></div>
+      <div class="flex">{{checkmark_svg}}<p>Every box includes <b>8 different flavors</b>, spices, a recipe, and a fun fact about ramen;</p></div>
+      <div class="flex">{{checkmark_svg}}<p>Embark on a <b>new journey</b> every month!</p></div>
+      <div class="flex">{{checkmark_svg}}<p><b>An assortment of flavors</b> will take you on a trip around authentic Asia with every box. Where to? Let’s find out!</p></div>
+      <div class="flex">{{checkmark_svg}}<p>Mouthwatering combinations of <b>flavors</b>, silky and crunchy <b>textures</b>, not to mention the mere <b>aesthetics</b>…</p></div>
+    </div>
+    <p class="subtitle">My Ramen Box is here to spice it up!</p>
+  </div>
+</div>
+
+<style>
+  
+    
+    #{{section.id}} .title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #454466; 
+      margin-bottom: 25px;
+    }
+
+    #{{section.id}} .divider{
+      margin-bottom: 30px;
+      margin-top: 20px;
+    }
+
+    #{{section.id}} .wrapper{
+      padding-left: 15px;
+      padding-right: 15px;
+      
+    }
+
+    #{{section.id}} .content p{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      color: #323050;
+      padding-left: 10px;
+      margin-bottom: 25px;
+      width: calc(100% - 24px);
+    }
+  
+    #{{section.id}} .content{
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+
+
+    #{{section.id}} .subtitle{
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 27px;
+      text-align: center;
+      color: #E84C35;
+    }
+  
+  	@media only screen and (min-width: 991px){
+     	 #{{section.id}} .title{
+           	 font-size: 24px;
+             margin-top: 40px;
+          	 margin-bottom: 40px;
+         }
+      
+      #{{section.id}} .divider{
+        margin-top: 0;
+        width: 102vw;
+      	height: 64px;
+      }
+      	#{{section.id}} {
+         	position: relative;
+    		top: -75px;
+        }
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Product - Bulletpoints",
+  "class": "product-bulletpoints-section",
+  "settings": [
+   
+  ],
+  "presets": [
+    {
+      "name": "Product - Bulletpoints",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

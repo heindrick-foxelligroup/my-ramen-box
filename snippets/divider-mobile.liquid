@@ -1,0 +1,19 @@
+<style>
+  
+  .mobile.divider-section-new{% if section_id != '' %}.{{ section_id }}{% endif %} {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    {{ extra_styles_div }}
+  }
+
+  .mobile.divider-section-new{% if section_id != '' %}.{{ section_id }}{% endif %} .divider {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    {{ extra_styles_img }}
+  }
+</style>
+
+<div class="mobile divider-section-new {% if section_id != '' %} {{ section_id }}{% endif %}">
+  <img class="mobile divider lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg" loading="lazy"/>
+</div>

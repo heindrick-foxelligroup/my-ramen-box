@@ -1,0 +1,162 @@
+{%- comment -%}
+  Custom CSS for all pages.
+  Custom selectors starts with "fox-"
+
+  Structure:
+	overwrite theme files
+	overwrite apps files
+	new custom elements
+{%- endcomment -%}
+
+<style>
+
+  /***** Overwrite theme files *****/
+  section.rich-banner-section .section__heading {
+    padding: 0;
+    text-align: center;
+  }
+
+  section.rich-banner-section .section__sub-title {
+    padding-top: 0;
+    padding-bottom: 12px;
+  }
+
+  section.rich-banner-section .banner-item {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  section.product-single-deal .psd__desc,
+  section.product-single-deal a {
+	font-size: 15px;
+  }
+
+  section.product-single-deal { text-align: center;}  
+
+  @media all and (min-width: 768px) {
+    section.product-single-deal > .container > .section__content > .row {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    .desktop.divider-section-new.template--15183303639224__1641556289b32cb68c {
+      display: none;
+    }
+  }
+
+  .banner-item__text__sub-7e9b3012-15dc-4b6a-a71f-7217f9ddf0c2-text_3 li {
+    font-size: 1rem;
+    position: relative; 
+    padding-left: 10px;
+    list-style-type: none;
+  }
+
+  .banner-item__text__sub-7e9b3012-15dc-4b6a-a71f-7217f9ddf0c2-text_3 li:before {    
+    content: "";
+    background-image: url("https://cdn.shopify.com/s/files/1/0598/9649/6312/files/tick01.png?v=1639575486");
+    position: relative;
+    top: 3px;
+    right: 5px;
+    background-size: 100% 100%;
+    display: inline-block;
+    height:17px;
+    width: 17px;
+  }
+
+.banner-item__text__sub-7e9b3012-15dc-4b6a-a71f-7217f9ddf0c2-text_3 br { display: none }
+
+/* desktop landing page tweaks */
+.banner-item__text__sub.banner-item__text__sub-1569287463328-text_1,
+.banner-item__text__sub.banner-item__text__sub-7e9b3012-15dc-4b6a-a71f-7217f9ddf0c2-text_1,
+.section__heading.section__heading--with-sub .section__title__text,
+#product-single-deal-template--15183303639224__1633540738c9762a6c h3.psd__title,
+#shopify-section-template--15183303639224__1633541873245428c9 .section__heading,
+#shopify-section-template--15183303639224__1633601655932aaba0 .section__heading {
+	background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg) center bottom no-repeat;
+}
+.banner-item__text__sub.banner-item__text__sub-1569287463328-text_1,
+.section__heading.section__heading--with-sub .section__title__text,
+#product-single-deal-template--15183303639224__1633540738c9762a6c h3.psd__title,
+#shopify-section-template--15183303639224__1633541873245428c9 .section__heading,
+#shopify-section-template--15183303639224__1633601655932aaba0 .section__heading {
+	padding: 0 0 15px 0;
+}
+#shopify-section-template--15183303639224__1633591489e69f5f78 .section__content.row .flex.flex-wrap {
+	justify-content: center;
+}
+
+.product-single-deal .button { 
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+} 
+
+@media all and (min-height: 768px){
+  
+/*   why cose my ramen box section */
+  #shopify-section-template--15183303639224__1633541873245428c9 .banner-item .w100.h100 {
+    align-content: flex-start;
+  }
+  
+  #shopify-section-template--15183303639224__1633541873245428c9 .banner-item__text .banner-item__text1 {
+    padding: 0 !important;
+  }
+}
+/* END OF desktop landing page tweaks*/
+
+  /***** END OF overwrite theme files *****/
+
+  /***** Overwrite apps files *****/
+  /* Instagram home page feed */
+
+  body.template-index #insta-feed { margin-top: 0; }
+
+  body.template-index #insta-feed h2 {
+    text-align: left !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px !important; 
+    margin-top:0;
+  }
+
+  body.template-index #insta-feed h2:before {
+    content: ' '; 
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    background: url('https://cdn.shopify.com/s/files/1/2987/3832/files/home-instagram-logo.svg') left center no-repeat;
+  }
+
+  body.template-index #insta-feed > [href="#1-insta-feed"]:before {
+      height: 35px;
+      width: 95%;
+      color: #000;
+      display: block;
+      float: left;
+      text-align: left;
+      margin-top: -30px;
+      margin-bottom: 3px;
+      margin-left: 1em;
+      font-size: 16px;
+      background: none;
+      line-height: 35px;
+  }
+
+/*   Klaviyo signup */
+  button.kl-private-reset-css-Xuajs1 {
+    margin-right: 5px!important;
+  }
+
+  input[type="email"].go1755572307 {
+    height: auto!important;
+    min-height: 54px!important;
+    margin-left: 2px!important;
+    border-radius: 10px 10px 10px 10px!important;
+  }
+  /***** END OF overwrite apps files *****/
+
+  /***** CSS for custom/new elements *****/
+  /***** END OF CSS for custom/new elements *****/
+</style>

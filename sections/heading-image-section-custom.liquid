@@ -1,0 +1,74 @@
+{% comment %}
+******************************************
+	Info:
+		Custom image with heading section. Mobile only. Hidden on desktop.
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<div id="{{section.id}}" class="fox-hide--medium-up">
+  <div class="wrapper">
+    <img class="divider lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18597.png?v=1637853707"/>
+    <h2 class="title"><span>What's Inside</span></h2>
+    
+    <div class="content">
+      <img class="image lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/Group_18682.png?v=1637853858"/>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  #{{section.id}}{
+   	margin-top: 40px; 
+  }
+  
+  #{{section.id}} .title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #454466; 
+    margin-bottom: 0;
+  }
+  
+  #{{section.id}} .divider{
+   	width: 100vw;
+    margin-left: -15px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+  }
+  
+  #{{section.id}} .wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  #{{section.id}} .image{
+   	 width: 100%;
+    
+  }
+
+</style>
+
+{%- render 'section-background-end' -%}
+{% schema %}
+  {
+    "name": "Product - Heading & Image",
+    "class": "heading-image-section-custom",
+    "settings": [
+    ],
+    "presets": [
+      {
+        "name": "Product - Heading & Image",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

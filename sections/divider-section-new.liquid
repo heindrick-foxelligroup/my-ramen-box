@@ -1,0 +1,90 @@
+{% comment %}
+******************************************
+	Info:
+		Sections seperator fully customizable
+
+	  
+    Author: Zilvinas Vaisnoras
+	Original author: Edvinas Kilbauskas
+    Date created: 2021-12-20
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<style>
+  
+  #{{section.id}}{
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+
+  #{{section.id}} .divider{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    top: -10px;
+  }
+</style>
+
+<div id="{{section.id}}" class="section-divider-section-new">
+  <img class="divider lazyload" data-src="https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg" loading="lazy"/>
+</div>
+
+{% schema %}
+{
+  "name": "Product - Divider new",
+  "class": "product-divider-section-new",
+  "settings": [
+   	{
+      "type": "header",
+      "content": "Seperator as HR"
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_mobile",
+      "label": "Enable on mobile",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_desktop",
+      "label": "Enable on desktop",
+      "default": false
+    },
+	{
+      "type": "text",
+      "id": "section_name",
+      "label": "Section name",
+      "default": "Seperator as HR"
+    },
+	{
+		"type": "range",
+		"id": "margin_top",
+		"unit": "px",
+		"min": -100,
+		"max": 100,
+		"step": 2,
+		"default": 0,
+		"label": "Margin (top)"
+	},
+	{
+		"type": "range",
+		"id": "margin_bottom",
+		"unit": "px",
+		"min": -100,
+		"max": 100,
+		"step": 2,
+		"default": 0,
+		"label": "Margin (bottom)"
+	}
+  ],
+  "presets": [
+    {
+      "name": "Product - Divider new",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

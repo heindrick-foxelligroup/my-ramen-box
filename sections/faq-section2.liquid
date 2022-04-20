@@ -1,0 +1,470 @@
+{% comment %}
+******************************************
+	Info:
+		Custom FAQ section for subscription product (desktop and mobile)
+
+	  
+    Author: Edvinas Kilbauskas
+    Date created: 2021-12-02
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<style>
+  @media only screen and (max-width: 990px){
+    #{{ section.id }} {
+   	max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+  }
+  
+  #{{ section.id }} .main-headline{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 50px;
+    text-align: center;
+    color: #245E8D;
+    margin-top: 20px;
+    max-width: 610px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #{{section.id}} .title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #454466; 
+    margin-bottom: 0;
+  }
+  
+  #{{section.id}} .divider{
+   	width: 100vw;
+    margin-left: -15px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  
+  #{{section.id}} .boxed{
+   	background-color: #fff;
+    padding: 10px 18px 39px 18px;
+    margin: 0px 12px 0 12px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 24px); 
+  }
+  
+:is(.template-page, .tab-pane) input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  /* Accordion styles */
+  :is(.template-page, .tab-pane) .tabs {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  :is(.template-page, .tab-pane) .tab {
+    width: 100%;
+    color: #000;
+    overflow: hidden;
+    position: relative;
+  }
+  :is(.template-page, .tab-pane) .tab:not(:last-of-type) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  :is(.template-page, .tab-pane) .tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    /* Icon */
+  }
+  :is(.template-page, .tab-pane) .tab-label:hover {
+    background-color: #E84C35;
+    color: #fff;
+  }
+  :is(.template-page, .tab-pane) .tab-label::after {
+    content: "❯";
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    transition: all 0.35s;
+  }
+  :is(.template-page, .tab-pane) .tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.35s;
+  }
+  :is(.template-page, .tab-pane) .tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: #2c3e50;
+    cursor: pointer;
+  }
+  :is(.template-page, .tab-pane) .tab-close:hover {
+    background: #1a252f;
+  }
+  :is(.template-page, .tab-pane) input:checked + .tab-label {
+    background: #E84C35;
+    color: #fff; 
+  }
+  :is(.template-page, .tab-pane) input:checked + .tab-label::after {
+    transform-origin: center;
+    transform: rotate(90deg);
+  }
+  :is(.template-page, .tab-pane) input:checked ~ .tab-content {
+    max-height: inherit;
+    padding: 1em;
+  }
+  
+  
+  /* alt-faqs-accordeon__wrapper */
+    .alt-faqs-accordeon__wrapper {
+      padding-bottom: 0!important;
+      margin-bottom: 20px!important; }
+    
+    .alt-faqs-accordeon__wrapper .faq { cursor: pointer; }
+    
+    .alt-faqs-accordeon__wrapper .faq-question {
+      border-bottom: 1px solid #E84C35;
+      padding: 15px 0; 
+      overflow: hidden;
+    }
+    
+    .alt-faqs-accordeon__wrapper .faq-question > input { display: none; }
+
+    .alt-faqs-accordeon__wrapper .faq-question > label {
+      position: relative;
+      display: block;
+      font-size: 18px;
+      line-height: 22px;
+      color: #454466;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    .alt-faqs-accordeon__wrapper .faq-question > label:after {
+      position: absolute;
+      right: 0;
+      top: -2px;
+      cursor: pointer;
+      -webkit-transition: 3s ease-in-out;
+      -o-transition: 3s ease-in-out;
+      transition: 3s ease-in-out; }
+    
+    .alt-faqs-accordeon__wrapper .faq-question > label:after { 
+      content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/plus_1.svg?v=1622479077");
+      filter: opacity(0.35) drop-shadow(0 0 0 #323050) drop-shadow(0 0 0 #323050) drop-shadow(0 0 0 #323050);
+    }
+    .alt-faqs-accordeon__wrapper .faq-question > input:checked + label:after { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/plus_2.svg?v=1622479077"); }
+
+    .alt-faqs-accordeon__wrapper .faq-answer-new { 
+      font-weight: 300;
+      margin: 0!important;
+      max-height:0;
+      font-size: 16px;
+      line-height: 24px;;
+      color: transparent!important;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+    
+    .alt-faqs-accordeon__wrapper .faq-question > input:checked ~ .faq-answer-new {
+        max-height: inherit;
+        padding-top: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        color: var(--dark-grey-content-color)!important; }
+
+    .alt-faqs-accordeon__wrapper .faq-question:last-of-type .faq-answer-new { overflow: auto; }
+
+    .alt-faqs-accordeon__wrapper .js-tabs__text.faq-tab { margin:0!important; }
+
+    .alt-faqs-accordeon__wrapper .faq__container > .faq-category-title { display: none; }
+  }
+  @media only screen and (min-width: 991px){
+    #{{ section.id }} {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
+
+    #{{ section.id }} .main-headline{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 50px;
+      text-align: center;
+      color: #245E8D;
+      margin-top: 20px;
+      max-width: 610px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #{{section.id}} .title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #454466; 
+      margin-bottom: 0;
+      background: url(https://cdn.shopify.com/s/files/1/0598/9649/6312/files/seperator-modern.svg) center bottom no-repeat;
+      padding: 0 0 20px 0;
+    }
+
+    #{{section.id}} .divider{
+      width: 100vw;
+      margin-left: -15px;
+      margin-bottom: 30px;
+      margin-top: 20px;
+    }
+
+    #{{section.id}} .boxed{
+      background-color: #fff;
+      padding: 30px 18px 39px 18px;
+      margin: 0px 12px 0 12px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+      width: calc(100% - 24px); 
+    }
+
+  :is(.template-page, .tab-pane) input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+    /* Accordion styles */
+    :is(.template-page, .tab-pane) .tabs {
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    :is(.template-page, .tab-pane) .tab {
+      width: 100%;
+      color: #000;
+      overflow: hidden;
+      position: relative;
+    }
+    :is(.template-page, .tab-pane) .tab:not(:last-of-type) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    :is(.template-page, .tab-pane) .tab-label {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      /* Icon */
+    }
+    :is(.template-page, .tab-pane) .tab-label:hover {
+      background-color: #E84C35;
+      color: #fff;
+    }
+    :is(.template-page, .tab-pane) .tab-label::after {
+      content: "❯";
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      transition: all 0.35s;
+    }
+    :is(.template-page, .tab-pane) .tab-content {
+      max-height: 0;
+      padding: 0 1em;
+      color: #2c3e50;
+      background: white;
+      transition: all 0.35s;
+    }
+    :is(.template-page, .tab-pane) .tab-close {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+      font-size: 0.75em;
+      background: #2c3e50;
+      cursor: pointer;
+    }
+    :is(.template-page, .tab-pane) .tab-close:hover {
+      background: #1a252f;
+    }
+    :is(.template-page, .tab-pane) input:checked + .tab-label {
+      background: #E84C35;
+      color: #fff; 
+    }
+    :is(.template-page, .tab-pane) input:checked + .tab-label::after {
+      transform-origin: center;
+      transform: rotate(90deg);
+    }
+    :is(.template-page, .tab-pane) input:checked ~ .tab-content {
+      max-height: inherit;
+      padding: 1em;
+    }
+
+
+        /* alt-faqs-accordeon__wrapper */
+       .alt-faqs-accordeon__wrapper {
+        padding-bottom: 0!important;
+        margin-bottom: 20px!important; }
+
+      .alt-faqs-accordeon__wrapper .faq { cursor: pointer; }
+
+      .alt-faqs-accordeon__wrapper .faq-question {
+        border-bottom: 1px solid #E84C35;
+        padding: 15px 0; 
+        overflow: hidden;
+      }
+
+      .alt-faqs-accordeon__wrapper .faq-question > input { display: none; }
+
+      .alt-faqs-accordeon__wrapper .faq-question > label {
+        position: relative;
+        display: block;
+        font-size: 18px;
+        line-height: 22px;
+        color: #333050;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .alt-faqs-accordeon__wrapper .faq-question > label:after {
+        position: absolute;
+        right: 0;
+        top: -2px;
+        cursor: pointer;
+        -webkit-transition: 3s ease-in-out;
+        -o-transition: 3s ease-in-out;
+        transition: 3s ease-in-out; }
+
+      .alt-faqs-accordeon__wrapper .faq-question > label:after { 
+        content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/plus_1.svg?v=1622479077");
+        filter: opacity(0.35) drop-shadow(0 0 0 #323050) drop-shadow(0 0 0 #323050) drop-shadow(0 0 0 #323050);
+      }
+      .alt-faqs-accordeon__wrapper .faq-question > input:checked + label:after { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/plus_2.svg?v=1622479077"); }
+
+      .alt-faqs-accordeon__wrapper .faq-answer-new { 
+        font-weight: 300;
+        margin: 0!important;
+        max-height:0;
+        font-size: 16px;
+        line-height: 24px;;
+        color: transparent!important;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+
+      .alt-faqs-accordeon__wrapper .faq-question > input:checked ~ .faq-answer-new {
+          max-height: inherit;
+          padding-top: 10px;
+          -webkit-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          color: var(--dark-grey-content-color)!important; }
+
+      .alt-faqs-accordeon__wrapper .faq-question:last-of-type .faq-answer-new { overflow: auto; }
+
+      .alt-faqs-accordeon__wrapper .js-tabs__text.faq-tab { margin:0!important; }
+
+      .alt-faqs-accordeon__wrapper .faq__container > .faq-category-title { display: none; }
+   }
+  
+</style>
+
+<div id="{{ section.id }}" class="">
+  
+  <div class="title">
+    <div>{{ section.settings.title }}</div>
+  </div>
+
+  <div class="alt-faqs-accordeon__wrapper boxed">
+    <div class="faq__container faq-tab">
+      <div class="faq">
+        <div class="faq-question">
+          <input type="checkbox" id="Q-1-desk">
+          <label class="tab-label accordion-tab-label" for="Q-1-desk">
+            Shipping
+          </label>
+          <p class="faq-answer-new">
+            All our subscription boxes ship FREE anywhere in the US! Sign up today and your first box will be shipped immediately! You will receive your first box within 2-6 days and all following boxes will be shipped on the 7th of each month.
+          </p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="faq-question">
+          <input type="checkbox" id="Q-2-desk">
+          <label class="tab-label accordion-tab-label" for="Q-2-desk">
+            Payment & billing
+          </label>
+          <p class="faq-answer-new">
+            We currently accept all major credit cards: Visa, MasterCard, Maestro. PayPal payments are also accepted. You will be charged immediately after your initial order. All future payments will occur on the 7th of every month. The price that you paid for the first box will be fixed for the remainder of your subscription, and all of the future boxes will cost the same.
+          </p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="faq-question">
+          <input type="checkbox" id="Q-3-desk">
+          <label class="tab-label accordion-tab-label" for="Q-3-desk">
+            FAQs
+          </label>
+          <div class="faq-answer-new">
+            <div class="tab-pane rte rte-wrapped">
+            {{ pages.frequently-asked-questions.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product - FAQ 2",
+    "settings": [
+	  {
+		"type": "text",
+		"id": "title",
+		"label": "Section title",
+		"default": "Shipping & Returns FAQS" 
+	  },
+      {
+        "type": "checkbox",
+        "id": "enable_on_mobile",
+        "label": "Enable on mobile",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_on_desktop",
+        "label": "Enable on desktop",
+        "default": false
+      }
+	],
+    "presets": [
+      {
+        "name": "Product - FAQ 2",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

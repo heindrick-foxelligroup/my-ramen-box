@@ -1,0 +1,1591 @@
+{% comment %} 
+  'snippets/new-subox-design-nov.liquid'
+  used in section 'main-product-subscription-nov.liquid'
+{% endcomment %}
+
+{% comment %} New mobile design {% endcomment %}
+
+<style>
+  
+.template-product > .header-sticker__inner { 
+    position: relative;
+    z-index: 99999999999!important }
+
+/*   announcement bar */
+  .promo__inner { display: none; }
+  
+  .quotetext > p { margin: 0; }
+  .additional-checkout-buttons,
+  .button--media { display: none; }
+
+  #fake-button__bottom {
+    background-color: var(--pink-color); 
+    color: var(--dark-grey-color);
+    height: 54px;
+    max-width: 100vw; }
+
+  #fake-button__bottom .subox-sticky-atc > button { 
+    color: #fff;
+    background-color: var(--dark-grey-color);
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size:16px;
+    line-height:19.2px;
+    margin-right: 27px; }
+
+  #fake-button__bottom > div { font-weight: 700; }
+  
+  .product-image-slider-wrapper { 
+    width: 100%;
+    max-width: 90%; 
+    margin: 0 auto; }
+
+  .slick-slider:hover .slick-arrow { color: transparent!important }
+
+  .product-image-slider {
+    background: url('https://cdn.shopify.com/s/files/1/2987/3832/files/backgrpund_graphics_1.png?v=1637086422'); 
+    background-size: 90% 90%;
+    background-position: center;
+    background-repeat: no-repeat; }
+  
+  .product-image-slider img { padding: 3px; }
+  
+  .slick-prev, 
+  .slick-next { 
+    color: transparent; }
+  
+  .slick-prev:before { content: url('https://cdn.shopify.com/s/files/1/2987/3832/files/arr-left.svg?v=1637085905') }
+  .slick-next:before { content: url('https://cdn.shopify.com/s/files/1/2987/3832/files/arr-right.svg?v=1637085921') }
+  
+  .slick-next:before { 
+    position: absolute;
+    right: 5px; }
+  
+  .product-single__photos .pg__thumbs-wap--single-ver-slider { display: none }
+  
+  .trust-badges { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-top: 20px;
+  }
+  
+  .trust-badges img { 
+    max-width: 25%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  
+  .template-product { padding-bottom: 0 }
+  
+  @media only screen and (min-width: 768px) { 
+    .new-product-photos,
+    .product-quote { display: none; }
+  }
+  
+  .new-design-mobile { 
+    margin: 0 -15px;
+    width: unset!important; }
+  
+  .product-quote {
+    text-align: center;
+    margin-bottom: 8px;
+    padding: 0 22px!important;
+    max-width: 100vw; }
+
+  .main-product-subscription .new-mobile-design > div { 
+    width: 100%;
+    max-width: 100vw!important;  }
+  
+  .quoteOntop > h2 {
+    color: var(--mint-color);
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing:2px;
+    margin-top:25px;
+    padding-top: 0; }
+  
+  .quotetext > p {
+    color: var(--light-grey-color);
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5; }
+  
+  .main-product-subscription .new-mobile-design,
+  .main-product-subscription .new-mobile-description { display: none!important; }
+  
+  .main-product-subscription { color: var(--dark-blue-title-color) !important; }
+  
+  @media all and (max-width: 767px){
+
+    /*   hide old product photos */
+    .product-single__photos { display: none; }
+    
+    .multiple-free-item-timer .accordion { 
+      border-radius: 10px;
+      background-color: var(--pink-color);
+      color: var(--dark-green-color);
+      position: relative;
+      z-index: 1; }
+    
+    .multiple-free-item-timer .accordion > span { padding-left:2em; }
+
+    .multiple-free-item-timer .accordion-panel { 
+      border: 1px solid var(--pink-color);
+      border-top: transparent;
+      width: 95%;
+      margin: 0 auto;
+      margin-top: -20px
+      padding-top: 8px; }
+
+    #bt-sidebar-cart { width: 100vw; }
+
+    html { overflow-x: hidden; }
+    body { 
+      min-width: 340px;
+      max-width: 100vw!important;
+      overflow-x:hidden!important;
+    }
+
+    .main-product-tabs-section { display: none; } 
+    
+    .main-product-subscription   .new-mobile-design,
+    .main-product-subscription   .new-mobile-description { 
+      display: -webkit-box!important; 
+      display: -ms-flexbox!important; 
+      display: flex!important;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    
+    .main-product-subscription .row { 
+       max-width: 100%;
+       margin-left: 0!important;
+       margin-right: 0!important; }
+    
+    .main-product-subscription .pg__tabs { display: none; }
+    
+    /* css variables */
+    :root { 
+    /* colors */
+      --dark-grey-color: #18444A;
+      --light-pink-color: #FFEFEB;
+      --pink-color: #F9BBBC;
+      --golden-color: #F2AF5C;
+      --mint-color: #769E8B;
+      --light-grey-color: #2E2E30;
+      --light-green-color: #E9F4EB;
+      --dark-green-color: #18444A;
+      --dark-grey-main-color: #333333;
+      --dark-blue-title-color: #305875;
+      --dark-grey-content-color: #5F6472; } 
+
+    .main-product-subscription .use-sticky.active { 
+      max-width: 100vw;
+      margin-left: 0; }
+
+    #shopify-section-header .header-ed { width: 100%!important; }
+    
+    .header.header--mobile { padding-top: 0 }
+    
+    .main-product-subscription { padding-top: 0!important; }
+
+    /* announcement-bar */
+    .announcement_mobile { 
+      background-color: var(--new-accent-color); 
+      height: 34px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    /* header */
+    header.site-header > div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    
+    .site-header__search-toggle,
+    .site-header__icons--plus { 
+      -webkit-box-ordinal-group: 2; 
+      -ms-flex-order: 1; 
+      order: 1; }
+
+    header.site-header > .phone_mobile,
+    .breadcrumbs,
+    .breadcrumbs__list,
+    .site-header__cart > span { display: none; }
+
+    .site-header { 
+      border-bottom: none!important;
+      padding-bottom: 0!important; }
+
+    /* logo, hamburger, search, basket */
+    .mobile_header_logo > img { width: 100%!important; }
+    .mobile_header_logo > img,
+    #mobile_menu .icon.icon-hamburger,
+    .site-header__search-toggle .icon.icon-search,
+    .site-header__cart #Layer_1 { opacity: 0; }
+
+    button.btn--link.site-header__search-toggle { 
+      left: 13vw;
+      margin-left: 0!important;
+      margin-right: -20px;
+      position: relative;
+      z-index: 999; }
+
+    button.site-header__search-toggle,
+    .grid__item.small--two-tenths,
+    .site-header__cart { margin-top: -8px!important; }
+
+    .grid__item { width: 100vw!important; }
+
+    #mobile_menu { left: 8px; }
+
+    .site-header__cart.head_cart { 
+      padding-right: 0;
+      margin-right: -5px; }
+    
+    .site-header__cart #CartCount { 
+      margin-left: 5px!important;
+      margin-top: -2px!important; }
+
+    .mobile_header_logo,
+    #mobile_menu,
+    .site-header__search-toggle,
+    .site-header__cart { 
+      position: relative;
+      padding: 0; }
+    
+    .product-quote { 
+      padding-top: 14px; }
+    
+    .header--mobile,
+    .site-header { 
+      padding-top: 14px;
+      background-color: var(--light-green-color); }
+    
+    .header-mobile__logo__image,
+    .site-header__logo {
+      background-image: url("https://cdn.shopify.com/s/files/1/2987/3832/files/logo_199ee2ff-74de-4472-9234-d30085bc48f1.svg?v=1636929714");
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain; }
+    
+    .header-mobile__logo__image {
+      content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/logo_199ee2ff-74de-4472-9234-d30085bc48f1.svg?v=1636929714"); }
+
+    .mobile-nav-bar.bt-sidebar-btn:before { 
+      content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/hamburger.svg?v=1622479077");
+      position: relative;
+      bottom: 5px; }
+    
+    .mobile-nav-bar.mobile_search_icon:before { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/search.svg?v=1622479077"); }
+    .lnr-shopping-bag:before { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/cart.svg?v=1636929789"); }
+    .header__link[title="Login"] { padding: 0 }
+    .lnr-user:before { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/login.svg?v=1636931130"); }
+
+    .header__link[title="Cart"] { padding: 0 24px 0 3px; }
+    .header__link[title="Cart"] > span.abs-number { 
+      top: -4px;
+      right: 18px;
+      font-size: 10px;
+      line-height: 20px;
+      background-color: var(--dark-green-color); }
+    
+    button.button.add-cart-btn { 
+      visibility:visible!important;
+      padding: 1px 23px; }
+
+    button.add-cart-btn > span:before { 
+      content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/basket.svg?v=1636931900");
+      position: relative;
+      left: -10px;
+      top:5px; }
+    
+    .lnr-shopping-cart { display: none }
+
+    .mobile-nav-bar.bt-sidebar-btn i,
+    .mobile-nav-bar.mobile_search_icon i,
+    .header__cart-trigger-mobile i { display: none; }
+
+    /* logo, hamburger, search, basket pseudoelements settings */
+    .mobile-nav--open:before,
+    .site-header__search-toggle:before,
+    .site-header__cart:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+
+    /* slider thumbnails/dots */
+    .carousel.slick-initialized { display: none; }
+
+    .sync.slick-dotted.slick-slider { margin-bottom: 110px!important; }
+    .sync .slick-dots { bottom: -50px; }
+
+    .slick-slider .slick-dots li button::before {
+      border: 1px solid var(--dark-grey-main-color);
+      background: transparent; }
+    
+    .slick-slider .slick-dots li.slick-active button::before { background: var(--dark-grey-main-color); }
+
+    /* placement */
+    .template-product .main-content { padding-top: 0; }
+
+    /* body */
+    #PageContainer.page-container > p { display: none; }
+
+    .header--mobile { border: none; }
+
+    .main-product-subscription .product-template-section { padding: 0; }
+    
+    .main-product-subscription .product-template-section .container-fluid > .row { margin-left: 0; }
+
+    .product-single__photos .por .slick-list.draggable, 
+    .sync { 
+      background-image: url('https://cdn.shopify.com/s/files/1/2987/3832/files/background-graphics.png?v=1622479077');
+      background-color: var(--light-pink-color);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain; } 
+
+    .sync .slick-list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+
+    .bottom-mobile-toolbar { display:none; }
+
+    .mobile-top-semicircle,
+    .grid.product-single > div.grid__item:not(:first-child) {
+      background-color: #fff;  
+      padding-top: 40px; 
+      border-top-left-radius: 40px;    
+      border-top-right-radius: 40px;    
+      margin-top: -30px;
+      -webkit-box-shadow: 0px -15px 25px rgba(67, 67, 67, 0.1);
+              box-shadow: 0px -15px 25px rgba(67, 67, 67, 0.1); }
+
+    .mobile-top-semicircle {
+      padding-left: 23px;
+      margin-top: 20px;
+      margin-left: -15px;
+      min-width: 100vw;
+      width: 100%; }
+
+    h1.product-single__title,
+    .product-single__title.heading {
+      font-family: 'Lato', sans-serif;
+      color: var(--dark-green-color); 
+      margin-top: 0;
+      margin-bottom: 0;
+      border: unset;
+      font-size: 23px;
+      line-height: 27.6px;
+      font-weight: 500; 
+      text-align: center;
+      text-transform: uppercase; }
+
+    .new-mobile-description,
+    .description {
+      margin-top: 25px;
+      color: var(--dark-grey-content-color);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 24px; }
+
+    #ProductPrice-product-template-new { visibility: hidden; }
+
+    .main-product-subscription .pg__review-stars .loox-rating { 
+      cursor: default!important;
+      pointer-events: none!important; 
+      text-align: center; }
+    
+    .main-product-subscription .pg__review-stars .loox-rating i:before, 
+    .main-product-subscription .pg__review-stars .loox-rating span { color: var(--golden-color)!important; }
+
+    /* No price shown */
+    .main-product-subscription .product-price-wrap,
+    /* No ATC badges */
+    .main-product-subscription .atc-badges-img { display: none; }
+
+    /* quantity selector  */
+    .main-product-subscription .qty-box {
+      visibility: hidden!important;
+      height:0!important;
+      margin:0!important; }
+
+    .main-product-subscription .product-form__item > label { display: none; }
+
+     /* Add to Cart */
+    .main-product-subscription .add-cart-btn {
+      border-radius: 10px!important;
+      background-color: var(--dark-green-color)!important;
+      color: #fff!important;
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 35px;
+      width: 100%;
+      border: none; }
+
+    .main-product-subscription form#AddToCartForm .free-shipping-banner-container,
+    .main-product-subscription form#AddToCartForm .free-shipping-banner-container + div,
+    .main-product-subscription form#AddToCartForm .addtocart-container + img,
+    .main-product-subscription form#AddToCartForm + div,
+    .main-product-subscription p.line,
+    .main-product-subscription .product-single__meta > div center,
+    .main-product-subscription .product-single__meta > div > div.slick-dots,
+    .main-product-subscription .product-single__description,
+    .main-product-subscription .payment-icon,
+    .main-product-subscription #tabs  { display: none!important; }
+    
+    .product-form__item.gutter-ele-top,
+    .product-form__item.gutter-ele-bottom { padding: 0!important }
+
+    .new-mobile-design { width: 100%; }
+    .new-design-mobile { padding: 0; }
+
+    .new-mobile-design div.with-padding { 
+      padding-left: 20px;
+      padding-right: 20px; }
+
+    .new-mobile-design .bold-title {
+      color: var(--dark-blue-title-color);
+      margin-bottom: 24px!important;
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 25px;
+      line-height: 31.25px;
+      letter-spacing: 0; }
+    
+    .new-mobile-design .thin-title {
+      font-family: 'Lato', sans-serif; 
+      margin-bottom: 16px!important;
+      color: var(--dark-blue-title-color);
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 37.5px;
+      letter-spacing: 0; }
+    
+    .new-mobile-design .small-thin-title {
+      font-family: 'Lato', sans-serif;
+      color: var(--dark-blue-title-color);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0; }
+    
+    .new-mobile-design .subtitle {
+      margin-bottom: 16px!important;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 24px;
+      letter-spacing: 0; }
+      
+    .new-mobile-design .sub-subtitle {
+      color: var(--dark-blue-title-color);
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-weight: 450;
+      font-size: 18px;
+      line-height: 27px; }
+    
+    .new-mobile-design .content {
+      margin-bottom: 20px;
+      font-family: 'Lato', sans-serif;
+      color: var(--dark-grey-content-color);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5rem; }
+    
+    .personal-growth .content p { 
+      position: relative; 
+      padding-left: 28px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 24px; }
+    
+    .personal-growth .content p:before { 
+      position: absolute; 
+      left: 0;
+      content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/purple-circle.svg?v=1636988300");
+      display: block;
+      width: 10px;
+      top: 5px;  
+    }
+
+    /* alt-testimonial__wrapper */
+    .alt-testimonial__wrapper { 
+      padding-top: 40px;
+      margin-top:10px;
+      background: #fff; }
+
+    /* boxed layout */
+    .new-mobile-design div.boxed {
+      background-color: #fff;
+      padding: 24px 18px 0 18px; 
+      margin: -20px 12px 0 12px; 
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+      width: calc(100% - 24px);
+      margin-top: 22px!important;
+      overflow: hidden;
+      -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+              box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); } 
+    
+    .new-mobile-design div.boxed h1, 
+    .new-mobile-design div.boxed h2, 
+    .new-mobile-design div.boxed h3 { margin-top: 0; } 
+
+    div.css-tabs-slides.boxed { 
+      padding: 0 14px;
+      max-width: 95vw!important; }
+    
+    .new-mobile-design h2 { 
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 23px;
+      color: var(--dark-green-color);
+      line-height: 34.5px; }
+
+    .alt-testimonial__wrapper img { width: 100%; }
+
+    /* alt-what-is__wrapper */
+    .alt-what-is__wrapper, 
+    .border-box__wrapper { 
+      margin-top: 22px!important;
+      overflow: hidden;
+      -webkit-box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+              box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1); }
+
+    .border-box__background-wrapper,
+    .alt-what-is__background-wrapper {
+      position: absolute;
+      right: 0;
+      bottom: 0; 
+      width:70%;
+      height: auto; }
+    
+    .border-box__wrapper-content h2 { text-align: center; }
+    
+    .border-box__wrapper-content,
+    .alt-what-is__wrapper-content {
+      position: relative;
+      z-index: 1; }
+    
+    h2.crossed > span { position: relative; }
+    
+    h2.crossed > span:before,
+    h2.crossed > span:after { 
+      content: "";
+      position: absolute;
+      top: 12px; }
+    
+    h2.crossed > span:before { 
+      width: 100vw;
+      height: 5px;
+      top: 12px;
+      left: 50%;
+      z-index: -2;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%); }
+    
+    h2.crossed > span:after {
+	  left: -5px;
+      width: calc(100% + 10px);
+      height: 100%;
+      z-index: -1; } 
+
+/*     crossed line color */
+    h2.crossed-line-white > span:before { background-color: #fff;}
+    h2.crossed-line-pink > span:before { background-color: var(--light-pink-color);}
+    
+/*     crossed line background color */
+    h2.crossed:not(.crossed-line-white) > span:after { background: #fff; }
+    h2.crossed:not(.crossed-line-pink) > span:after { background: var(--light-green-color);} 
+
+/*     .light-green-background { z-index: -1; }   */
+    
+    .border-box__wrapper-content .content,
+    .alt-what-is__wrapper-content .content, 
+    .border-box__wrapper .subtitle { color: var(--dark-grey-main-color); }  
+    .border-box__wrapper .subtitle { 
+      font-size: 15px;
+      line-height: 24px; } 
+    
+    .main-product-subscription  .slick-track { cursor: pointer; }
+
+    .main-product-subscription  .blurb-image { max-width: 100%; }
+  
+    .pink-background { background-color: var(--light-pink-color); }
+
+    .light-green-background { background-color: var(--light-green-color); }
+
+    .hear-it-from h2 { 
+      text-align: center;
+      width: 215px;
+      margin: 33px auto 0 auto; }
+  
+    .hear-it-from .content { 
+      background-color: #fff;
+      -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+              box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 12px 25px 0 25px;
+      margin-right: 13px;
+      margin-left: 13px;
+    }
+  
+    .hear-it-from .content img.stars { 
+      max-width: 100px; 
+      margin-left: -3px; 
+      margin-bottom: 12px; }
+  
+  	.hear-it-from .slick-list { 
+      padding-top: 75px!important;
+      padding-bottom: 70px!important;
+    }
+    .hear-it-from .slide { position: relative }
+    .hear-it-from .content img.person {
+      position: absolute;
+      max-width: 100px;
+      top: -50px;
+      right: 10px;
+    }
+  
+    .hear-it-from .slick-dots { margin-bottom: 35px }
+    :is(.hear-it-from, .peek-inside) .slick-slider .slick-dots li.slick-active button:before { background: var(--mint-color); }
+    :is(.hear-it-from, .peek-inside) .slick-slider .slick-dots li button:before { 
+      width: 12px;
+      height: 12px;
+      top: 4px;
+      left: 4px;
+      border-color: var(--mint-color); }
+  
+    .peek-inside { padding-bottom: 50px!important; }
+
+    .new-mobile-design h2 { text-align: center }
+    .new-mobile-design .subtitle { 
+      padding: 0 15px;
+      color: var(--light-grey-color);
+      font-size: 15px; 
+      line-height: 24px; }
+  
+    .peek-inside .slick-dots { margin-bottom: -35px }
+    .peek-inside .slide { position: relative; }
+    .peek-inside .slide:before { 
+      position: absolute;
+      background: url('https://cdn.shopify.com/s/files/1/2987/3832/files/What_you_can_expect1_1.svg?v=1637085642'); 
+      z-index: -1;
+      content: '';
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat; } 
+  
+    .fake-button-original img {
+      max-width: 100%;
+      height: auto; }
+
+    .fake-button-original { cursor: pointer; }
+  
+    /* Pure css tabs acc to https://codepen.io/renatorib/pen/rlpfj?editors=1100*/
+
+    .css-tabs-slides { 
+      margin-bottom: 14px!important;
+      position: relative;
+      z-index: 2!important; }
+
+    .css-tabs-slides .pc-tab > input,
+    .css-tabs-slides .pc-tab section > div {
+      display: none; }
+
+    .css-tabs-slides .tabs ~ nav label {
+      position: relative;
+      text-transform: uppercase;
+      border-radius: 0 0 10px 10px;
+      cursor: pointer; }
+
+    .css-tabs-slides #tab1:checked ~ nav .tab1 label,
+    .css-tabs-slides #tab2:checked ~ nav .tab2 label {
+      background-color: var(--mint-color);
+      color: #fff; }
+
+    .css-tabs-slides #tab1:checked ~ section .tab1,
+    .css-tabs-slides #tab2:checked ~ section .tab2 {
+      display: block; }
+
+    .css-tabs-slides .pc-tab {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto; }
+
+    .css-tabs-slides .pc-tab nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+
+    .css-tabs-slides > div > .pc-tab nav ul li { 
+      display: -webkit-box; 
+      display: -ms-flexbox; 
+      display: flex;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%; }
+
+    .css-tabs-slides > div > .pc-tab ul li label {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 18px; 
+      color: var(--mint-color); }
+
+    .css-tabs-slides > div > .pc-tab section {
+      clear: both; }
+
+    .css-tabs-slides .slide-content img { 
+      max-width: 195px;
+      margin: 16px auto 26px auto; }
+
+    .css-tabs-slides .slide-content h3 { 
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 22px;
+      line-height: 22px; 
+      color: var(--dark-green-color);
+      margin-bottom: 33px }
+
+    .css-tabs-slides .slide-content h4 { 
+      text-align: center;
+      font-size: 16px;
+      line-height: 22px;
+      font-style: italic;
+      color: var(--light-grey-color);
+      margin-bottom: 40px; }
+
+    .css-tabs-slides .slide-content ul > li { 
+      list-style-type: disc;
+      font-size: 16px;
+      line-height: 22px;
+      color: var(--light-grey-color); }
+    
+    .css-tabs-slides > div > .pc-tab ul.slick-dots li.slick-active button:before { background-color: var(--pink-color); }
+
+    .css-tabs-slides > div > .pc-tab ul.slick-dots li button:before { 
+      width: 12px;
+      height: 12px;
+      top: 4px;
+      left: 4px;
+      border-color: var(--pink-color); }
+    
+    .css-tabs-slides section > div { padding: 33px 0; }
+
+    .css-tabs-slides .blurbs__wrapper { 
+      display: -ms-grid; 
+      display: grid;
+      -ms-grid-columns: 1fr 20px 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px; }
+    
+    .css-tabs-slides .blurb__container { 
+      display: -webkit-box; 
+      display: -ms-flexbox; 
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      text-align: center;
+      position: relative;
+      z-index: 1; }
+
+    .css-tabs-slides .blurb__container img {
+      max-width: 70%;    
+      object-fit: contain;
+      border-radius: 50%;
+      padding: 5px;
+      border: 1px solid var(--mint-color); }
+
+    .css-tabs-slides .blurb-content { 
+      text-transform: capitalize;
+      font-size: 15px; 
+      font-weight: 700;
+      line-height: 18px;
+      color: #000; 
+      margin-top: 10px; }
+    
+    .css-tabs-slides .tab-slider { padding-bottom: 40px; } 
+
+    .css-tabs-slides .slick-arrow { top: calc(43% - 15px); }
+    
+    .css-tabs-slides .slide.slick-active { width: 90vw!important; background-color: #fff }
+    
+    .css-tabs-slides .slick-list.draggable { max-height: 550px; }
+
+    /* END Pure css tabs */
+    
+    /* Hand picked items */
+
+    .hand-picked-items__wrapper { 
+      padding-top: 60px;
+      padding-bottom: 30px;
+      position: relative; }
+
+    .hand-picked-items__wrapper .image-leaves {
+      position: absolute;
+      z-index: 1;
+      width: 40%;
+      right: 0;
+      top: -30px; }
+
+    .hand-picked-items__wrapper h2:before,
+    .hand-picked-items__wrapper h2:after { width: 120px; }
+
+    .hand-picked-items__wrapper h2:before { left: -20px; }
+    .hand-picked-items__wrapper h2:after { right: -20px; }
+
+    .hand-picked-items__wrapper .card-content { 
+      display: -webkit-box; 
+      display: -ms-flexbox; 
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      max-width: 100vw;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      gap: 3%;
+    }
+    .hand-picked-items__wrapper .card { 
+      -webkit-box-flex: 0; 
+          -ms-flex: 0 0 30%; 
+              flex: 0 0 30%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      text-align: center; }
+
+    .hand-picked-items__wrapper .card img { 
+      max-width: 100%; }
+
+    /* alt-how_it-works__wrapper */
+    .alt-how_it-works__wrapper { 
+      position: relative;
+      overflow:hidden; }
+    
+    .alt-how_it-works__wrapper h2:before,
+    .alt-how_it-works__wrapper h2:after { width: 90px; }
+
+    .alt-how_it-works__wrapper .alt-how_it-works__step .step-title {
+      position: relative;
+      padding: 25px 0 25px 70px;
+      color: var(--mint-color); }
+    
+    .alt-how_it-works__wrapper .alt-how_it-works__step .step-title:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    
+    /* numbers */
+    .alt-how_it-works__wrapper .step-one:before { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/1.svg?v=1622479077"); }
+    .alt-how_it-works__wrapper .step-two:before { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/2.svg?v=1622479077"); }
+    .alt-how_it-works__wrapper .alt-how_it-works__step .step-three:before { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/3.svg?v=1622479077"); }
+
+    /* arrows */
+    .alt-how_it-works__wrapper .step-title:after { 
+      content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/arrow-green.svg?v=1637076936");
+      position: absolute; 
+      padding-left: 10px;
+      top: 0;
+      top: 50%;
+      -webkit-transform: translateY(-55%);
+          -ms-transform: translateY(-55%);
+              transform: translateY(-55%); }
+    
+    .alt-how_it-works__step .description {
+      margin-top: 0;
+      font-size: 16px;  
+      font-weight: 300; }
+    .alt-how_it-works__wrapper .alt-how_it-works__step,
+    .alt-how_it-works__wrapper .small-thin-title.pink-text {
+      position: relative;
+      z-index: 2; }
+
+    .alt-how_it-works__wrapper .small-thin-title.pink-text {
+      color: #FEBCBC;
+      padding: 12px 0 28px 0; }
+
+    .alt-how_it-works__background-wrapper {
+      position: absolute;
+      right: 0;
+      bottom: -100px;
+      z-index: 1; }
+
+    /* alt-click-here__wrapper */
+    .alt-click-here__wrapper { 
+      margin: 0 0;
+      background-color: #fff; }
+    
+    .alt-click-here__wrapper img { width: 100% }  
+    .alt-click-here__wrapper .fake-button { cursor: pointer; }
+    
+    .fake-button { 
+      bottom: -54px!important;
+      z-index: 9998!important; }
+    
+    .fake-button__show { bottom: 0!important; }
+    
+    
+    .alt-faqs-accordion__wrapper h2:before,
+    .alt-faqs-accordion__wrapper h2:after { width: 50px; }
+
+    .alt-faqs-accordion__wrapper .faq { cursor: pointer; }
+    
+    .alt-faqs-accordion__wrapper .faq:not(:first-of-type) .faq-question{
+      border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+    .alt-faqs-accordion__wrapper .faq-question {
+      padding: 15px 0; 
+      overflow: hidden; }
+    
+    .alt-faqs-accordion__wrapper .faq-question > input { display: none; }
+
+    .alt-faqs-accordion__wrapper .faq-question > label {
+      position: relative;
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px; }
+    
+    .alt-faqs-accordion__wrapper .faq-question > label:after {
+      position: absolute;
+      right: 0;
+      top: -2px;
+      -webkit-transition: 3s ease-in-out;
+      -o-transition: 3s ease-in-out;
+      transition: 3s ease-in-out; }
+    
+    .alt-faqs-accordion__wrapper .faq-question > label:after { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/plus_1.svg?v=1622479077"); }
+    .alt-faqs-accordion__wrapper .faq-question > input:checked + label:after { content: url("https://cdn.shopify.com/s/files/1/2987/3832/files/plus_2.svg?v=1622479077"); }
+
+    .alt-faqs-accordion__wrapper .faq-answer-new { 
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      margin: 0!important;
+      max-height:0;
+      font-size: 16px;
+      line-height: 24px;;
+      color: transparent!important;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+    
+    .alt-faqs-accordion__wrapper .faq-question > input:checked ~ .faq-answer-new {
+        max-height: 100vh;
+        padding-top: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        color: var(--dark-grey-content-color)!important; }
+
+    .faq__container.faq-tab { 
+      max-width: 90vw;
+      margin: 0 auto; }
+
+    .alt-faqs-accordion__wrapper .faq-question:last-of-type .faq-answer-new { overflow: auto; }
+
+    .alt-faqs-accordion__wrapper .js-tabs__text.faq-tab { 
+      margin:0!important; }
+
+    .alt-faqs-accordion__wrapper .faq__container > .faq-category-title { display: none; }
+
+  /* badges */
+    .new-box-badges { display: none; }
+  }
+   
+  @media all and ( min-width: 768px ){
+    #shopify-section-product-template-subox #product-template-tabs-product-template-subox li:nth-of-type(n + 5){ display: none; }
+    .new-mobile-design { display: none }
+  }
+
+  #shopify-section-template--15203082928318__163402235295bbce7d { display: none; }
+
+  .review-title-section { margin-bottom: -50px; }
+  
+  .multiple-free-item-timer .accordion > span { 
+    margin-top: -20px;
+    margin-bottom: 10px; }
+  
+  limespot-box { display: none!important }
+  
+  /*   BFCM borders */
+  @media all and (max-width: 767px){
+     .multiple-free-item-timer .accordion > span { 
+      margin-top: -20px;
+      margin-bottom: 10px; }
+    
+    .bfcm-notice { border-radius: 10px; } } 
+  
+	/* END BFCM FIXES */
+
+</style> 
+
+<section class="new-mobile-design">
+  
+  <div class="trust-badges-wrapper">
+    <section class="trust-badges">
+      <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/usdelivery.png?v=1637085322" class="lazyload">
+      <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/fshipping.png?v=1637085343" class="lazyload">
+      <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/happy-cust.png?v=1637085370" class="lazyload">
+    </section>
+    <section class="trust-badges">
+      <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/guarantee.png?v=1637085394" class="lazyload">
+      <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/checkout.png?v=1637085468" class="lazyload">
+      <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/cancel.png?v=1637085486" class="lazyload">
+    </section>
+  </div>
+  
+  <div class="border-box__wrapper personal-growth boxed">
+    <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/Artboard_4_4.svg?v=1622812120" class="lazyload border-box__background-wrapper" alt="Mindful Souls">
+    <div class="border-box__wrapper-content">
+      <h2 class="crossed crossed-line-pink"><span>Your personal growth subscription box</span></h2>
+      <p class="subtitle">Different self-love essentials every month to nourish your mind, body, and soul.</p>
+      <div class="content">
+        <p><b>Powerful crystals</b> to enhance your meditation, yoga, or healing practice;</p>
+        <p><b>High-vibrational jewelry</b> to attract unconditional love and happiness;</p>
+        <p><b>Aromatherapy and monthly affirmations</b> to amplify your personal growth;</p>
+        <p><b>Detailed information guide</b> to lead you through your self-love journey;</p>
+        <p>Treat yourself to a <b>monthly surprise</b>! Find <b>6-8 new items</b> in each box.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hear-it-from light-green-background">
+    <h2 class="crossed crossed-line-white"><span>Hear it from<br> our customers</span></h2>
+    <div class="slider-centered">
+      <div class="slide content">
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/customer-1_1.png?v=1636989390" class="lazyload person" alt="Mindful Souls">
+        <p class="customer-name">Carianne C.</p>
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/stars_184781ac-7aa9-486f-8882-dc7bab0dce72.svg?v=1636989481" class="lazyload stars" alt="Mindful Souls">
+        <p>I look forward to my box every month. I love how the jewelry is not only spiritual but looks professional and classy as well. I wear some pieces of Mindful Souls Jewelry every day. 💜</p>
+      </div>
+      <div class="slide content">
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/customer-2_1.png?v=1636994794" class="lazyload person" alt="Mindful Souls">
+        <p class="customer-name">Renee P.</p>
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/stars_184781ac-7aa9-486f-8882-dc7bab0dce72.svg?v=1636989481" class="lazyload stars" alt="Mindful Souls">
+        <p>I love this months Lapis Lazuli ring! It is the first one I’ve gotten from MS and I adore it. It has definitely invited lots of compliments. Thank you for my monthly happiness box!</p>
+      </div>
+      <div class="slide content">
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/customer-3_1.png?v=1636994822" class="lazyload person" alt="Mindful Souls">
+        <p class="customer-name">Kristin N.</p>
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/stars_184781ac-7aa9-486f-8882-dc7bab0dce72.svg?v=1636989481" class="lazyload stars" alt="Mindful Souls">
+        <p>You NEED to subsribe this for yourself. Self love is the key. I am completely hooked. I have given crystals for housewarming gifts and have given my son what I call the worry stone!  LOVE IT</p>
+      </div>
+      <div class="slide content">
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/customer-4_1.png?v=1636994872" class="lazyload person" alt="Mindful Souls">
+        <p class="customer-name">Sharon H.</p>
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/stars_184781ac-7aa9-486f-8882-dc7bab0dce72.svg?v=1636989481" class="lazyload stars" alt="Mindful Souls">
+        <p>I love my subscription box! Everything in it is relevant and keeps me mindful. I have recommended this to a few friends and they love it as well. I can’t wait until my next one!</p>
+      </div>
+      <div class="slide content">
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/customer-5_1.png?v=1636994927" class="lazyload person" alt="Mindful Souls">
+        <p class="customer-name">Ethan G.</p>
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/stars_184781ac-7aa9-486f-8882-dc7bab0dce72.svg?v=1636989481" class="lazyload stars" alt="Mindful Souls">
+        <p>I can’t tell you enough how satisfied I am with every box. I have been subscribed for close to a year now. Thank you for enriching my life, household and soul.</p>
+      </div>
+      <div class="slide content">
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/customer-6_1.png?v=1636994942" class="lazyload person" alt="Mindful Souls">
+        <p class="customer-name">Laura B.</p>
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/stars_184781ac-7aa9-486f-8882-dc7bab0dce72.svg?v=1636989481" class="lazyload stars" alt="Mindful Souls">
+        <p>I loved everything in this box, the Tiger's Eye bracelet, the crystal quartz necklace, the Rain Song essential oil and all other items. My next box is shipping soon, I can't wait! </p>
+      </div>
+      <div class="slide content">
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/customer-7_1.png?v=1636995014" class="lazyload person" alt="Mindful Souls">
+        <p class="customer-name">Isabella S.</p>
+        <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/stars_184781ac-7aa9-486f-8882-dc7bab0dce72.svg?v=1636989481" class="lazyload stars" alt="Mindful Souls">
+        <p>This clear quartz around my neck came in my second mindful box. They say crystals meant for you find you, and that really rings true for this beautiful piece of quartz.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="alt-what-to-expect-slider__wrapper one peek-inside">
+    <h2 class="crossed crossed-line-pink"><span>Peek inside</span></h2>
+    <p class="subtitle">Our goal is to make great self-love tools accessible to everyone. That’s why we’re proud that each Mindful Box has unique hand-picked items worth over $80.</p>
+    <div class="new-slider">
+      <div class="slide">
+        <p class="img-wrapper">
+          <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/Peek-inside.png?v=1637085536" class="lazyload" alt="Mindful Souls">
+        </p>
+      </div>
+      <div class="slide">
+        <p class="img-wrapper">
+          <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/expect2.png?v=1637000532" class="lazyload" alt="Mindful Souls">
+        </p>
+      </div>
+      <div class="slide">
+        <p class="img-wrapper">
+          <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/expect3.png?v=1637000548" class="lazyload" alt="Mindful Souls">
+        </p>
+      </div>
+      <div class="slide">
+        <p class="img-wrapper">
+          <img data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/expect4.png?v=1637000584" class="lazyload" alt="Mindful Souls">
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fake-button-original">
+    <div class="fake-button-orig">
+      <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/Group_1150.png?v=1637002771" class="lazyload" alt="Add to cart">
+    </div>
+  </div>
+
+  <div class="alt-inside-box__wrapper with-padding">
+    <div class="alt-inside-box__wrapper-content">
+      <h2 class="crossed crossed-line-pink"><span>Dig deeper</span></h2>
+      <p class="subtitle">Each month’s box contains a unique variety of natural crystals, gem jewelry, self-love tools, spiritual goodies, and other exciting gifts.</p>
+    </div>
+  </div>
+
+  <div class="css-tabs-slides boxed">
+    <div class="box-overview css-tab">
+      <div class="pc-tab">
+        <input checked="checked" id="tab1" class="tabs" type="radio" name="pct" />
+        <input id="tab2" class="tabs" type="radio" name="pct" />
+          <nav>
+            <ul>
+              <li class="tab1">
+                <label for="tab1">BOX OVERVIEW</label>
+              </li>
+              <li class="tab2">
+                <label for="tab2">ITEMS’ DETAILS</label>
+              </li>
+            </ul>
+          </nav>
+          <section>
+            <div class="tab1">
+              <div class="blurbs__wrapper">
+                <a class="tab-slide-link" href="#">
+                  <div class="blurb__container">
+                    <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/content-1.png?v=1637065107" class="lazyload blurb-image" alt="Mindful Souls">
+                    <div class="blurb-content">Powerful Healing<br> Crystals</div>
+                  </div>
+                </a>
+                <a class="tab-slide-link" href="#">
+                  <div class="blurb__container">
+                    <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/content-2.png?v=1637065129" class="lazyload blurb-image" alt="Mindful Souls">
+                    <div class="blurb-content">Genuine Jem<br> Jewelry</div>
+                  </div>
+                </a>
+                <a class="tab-slide-link" href="#">
+                  <div class="blurb__container">
+                    <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/content-3.png?v=1637065150" class="lazyload blurb-image" alt="Mindful Souls">
+                    <div class="blurb-content">Natural<br> Aromatherapy</div>
+                  </div>
+                </a>
+                <a class="tab-slide-link" href="#">
+                  <div class="blurb__container">
+                    <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/content-4.png?v=1637065167" class="lazyload blurb-image" alt="Mindful Souls">
+                    <div class="blurb-content">Talismans For Your<br> Home</div>
+                  </div>
+                </a>
+                <a class="tab-slide-link" href="#">
+                  <div class="blurb__container">
+                    <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/content-5.png?v=1637065184" class="lazyload blurb-image" alt="Mindful Souls">
+                    <div class="blurb-content">Natural Beauty<br> Products</div>
+                  </div>
+                </a>
+                <a class="tab-slide-link" href="#">
+                  <div class="blurb__container">
+                    <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/content-6.png?v=1637065199" class="lazyload blurb-image" alt="Mindful Souls">
+                    <div class="blurb-content">Spiritual Mystery<br> items</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="tab2">
+              <article class="slide-part">
+                <div class="tab-slider">
+                  <div class="slide slide-content">
+                    <img class="lazyload" data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/content-1.png?v=1637065107" alt="Mindful Souls">
+                    <h3>Powerful Healing<br> Crystals</h3>
+                    <h4>Experience the natural beauty of high-quality stones sourced from all over the world! </h4>
+                    <ul>
+                      <li>Attract unconditional love happiness, and abundance </li>
+                      <li>Raise vibrations in your space </li>
+                      <li>Enhance your meditation practice </li>
+                      <li>Strengthen your connection with the universe and your inner-self</li>
+                    </ul>
+                  </div>
+                  <div class="slide slide-content">
+                    <img class="lazyload" data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/content-2.png?v=1637065129" alt="Mindful Souls">
+                    <h3>Genuine Jem<br> Jewelry</h3>
+                    <h4>Discover unique designs and powerful gemstones that will help you strive towards your best version of yourself wherever you go! </h4>
+                    <ul>
+                      <li>Shield from negative energy</li>
+                      <li>Stay in balance through the day</li>
+                      <li>Boost self-esteem and confidence</li>
+                      <li>Ease tension, let go of stress</li>
+                    </ul>
+                  </div>
+                  <div class="slide slide-content">
+                    <img class="lazyload" data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/content-3.png?v=1637065150" alt="Mindful Souls">
+                    <h3>Natural<br> Aromatherapy</h3>
+                    <h4>Learn to relax and unwind in a way that benefits your body, mind, and soul. </h4>
+                    <ul>
+                      <li>Explore the powers of essential oils and incense</li>
+                      <li>Improve sleep quality</li>
+                      <li>Unlock creativity</li>
+                      <li>Allow deep relaxation</li>
+                    </ul>
+                  </div>
+                  <div class="slide slide-content">
+                    <img class="lazyload" data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/content-4.png?v=1637065167" alt="Mindful Souls">
+                    <h3>Talismans For Your<br> Home</h3>
+                    <h4>Decorate your space with inviting reminders to be present! </h4>
+                    <ul>
+                      <li>Create mindful atmosphere</li>
+                      <li>Invite harmony into your meditation space</li> 
+                      <li>Keep reminders to be mindful</li>
+                      <li>Attract positivity</li> 
+                    </ul>
+                  </div>
+                  <div class="slide slide-content">
+                    <img class="lazyload" data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/content-5.png?v=1637065184" alt="Mindful Souls">
+                    <h3>Natural Beauty<br> Products</h3>
+                    <h4>A happy soul can only live in a nourished body. </h4>
+                    <ul>
+                      <li>Treat your body with the care it deserves</li>
+                      <li>Create new self-care rituals</li>
+                      <li>Practice radical self-love</li>
+                      <li>Learn life-changing affirmations</li>
+                    </ul>
+                  </div>
+                  <div class="slide slide-content">
+                    <img class="lazyload" data-lazy="https://cdn.shopify.com/s/files/1/2987/3832/files/content-6.png?v=1637065199" alt="Mindful Souls">
+                    <h3>Spiritual Mystery<br> items</h3>
+                    <h4>Each month, find a new spiritual and mindful goodie in your box! </h4>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+    </div>
+  </div>
+  
+  <div class="hand-picked-items__wrapper light-green-background">
+    <img class="lazyload image-leaves" data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/leaves.png?v=1637084134" alt="Mindful Souls">
+    <h2 class="crossed crossed-line-white"><span>Original<br> hand-picked items</span></h2>
+    <p class="subtitle">
+      All the items are ethically sourced by OURSELVES - there is no middleman. As a result, we’re proud to offer great value for a reasonable price! All our stones are natural & come from all around the world.
+    </p>
+    <div class="card-content">
+      <div class="card">
+        <img 
+          class="card-image lazyload" 
+          data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/flag-India.png?v=1637081406" 
+          alt="Mindful Souls">
+        <p class="card-image-title">India</p>
+      </div>
+      <div class="card">
+        <img 
+          class="card-image lazyload" 
+          data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/flag-brasil.png?v=1637083707" 
+          alt="Mindful Souls">
+        <p class="card-image-title">Brasil</p>
+      </div>
+      <div class="card">
+        <img 
+          class="card-image lazyload" 
+          data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/flag-morocco.png?v=1637083850" 
+          alt="Mindful Souls">
+        <p class="card-image-title">Morocco</p>
+      </div>
+      <div class="card">
+        <img 
+          class="card-image lazyload" 
+          data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/flag-usa.png?v=1637083874" 
+          alt="Mindful Souls">
+        <p class="card-image-title">USA</p>
+      </div>
+      <div class="card">
+        <img 
+          class="card-image lazyload" 
+          data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/flag-eu.png?v=1637083892" 
+          alt="Mindful Souls">
+        <p class="card-image-title">Europe</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="alt-how_it-works__wrapper with-padding">
+      <h2 class="crossed crossed-line-pink"><span>HOW IT WORKS</span></h2>
+      <div class="alt-how_it-works__steps-wrapper">
+        <div class="alt-how_it-works__step">
+          <h4 class="small-thin-title step-title step-one">YOU SUBSCRIBE</h4>
+          <p class="description">
+            Buy your box now and get ready to receive a monthly package full of mindful goodies every month. Not sure if you want to commit long-term? No worries! Cancel your subscription ANYTIME for ANY reason.
+          </p>
+        </div>
+        <div class="alt-how_it-works__step">
+          <h4 class="small-thin-title step-title step-two">WE CURATE</h4>
+          <p class="description">
+            Sit back, relax, and let us curate your first box! In the next 2-5 days, you’ll receive your first Mindful Box with 6-8 unique items. All the following boxes are sent on the 7th of each month. Shipping is always FREE!
+          </p>
+        </div>
+        <div class="alt-how_it-works__step">
+          <h4 class="small-thin-title step-title step-three">YOU RECEIVE</h4>
+          <p class="description">
+            Now, it’s finally time to forget about the rest of the world and focus exclusively on YOU! Enhance your spiritual practices, practice self-love, and nourish your body and soul. You deserve nothing but the very best!
+          </p>
+        </div>
+      </div>  
+    </div>
+  
+    <div class="fake-button-original">
+      <div class="fake-button-orig">
+        <img data-src="https://cdn.shopify.com/s/files/1/2987/3832/files/Group_1150.png?v=1637002771" class="lazyload" alt="Add to cart">
+      </div>
+    </div>
+
+    <div class="alt-faqs-accordion__wrapper">
+      <h2 class="crossed crossed-line-pink"><span>Shipping & Returns FAQS</span></h2>
+      <div class="faq__container faq-tab">
+        <div class="faq">
+          <div class="faq-question">
+            <input type="checkbox" id="Q-1">
+            <label class="tab-label accordion-tab-label" for="Q-1">
+              Shipping
+            </label>
+            <p class="faq-answer-new">
+              All our subscription boxes ship FREE anywhere in the United States! Sign up today and your first box will be shipped immediately! You will receive your first box within 2-6 days and all following boxes will be shipped on the 7th of each month.
+            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="faq-question">
+            <input type="checkbox" id="Q-2">
+            <label class="tab-label accordion-tab-label" for="Q-2">
+              Returns
+            </label>
+            <p class="faq-answer-new">
+              You're either fully satisfied... head over heels thrilled with your box, or just return it within 30 days for a full refund. Just shoot us an email or give us a call and we’ll send you a free of charge return label to ensure a hassle-free return.
+            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="faq-question">
+            <input type="checkbox" id="Q-3">
+            <label class="tab-label accordion-tab-label" for="Q-3">
+              FAQS
+            </label>
+            <p class="faq-answer-new"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-title-section">
+      <h2 class="crossed crossed-line-pink"><span>Reviews</span></h2>
+    </div>
+</section>
+
+<script>
+  
+  $(document).ready(function(){
+ 
+    function changeSlider(){
+      if ($(window).width() <= 768) {
+        $(".sync").slick("unslick");
+        $(".sync").slick({
+          lazyLoad: 'ondemand',
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 150,
+          swipe: true,
+          swipeToSlide: true,
+          draggable: true,
+          infinite: false,
+          arrows: false,
+          dots: true
+        });
+      } else {
+        $(".sync").slick("unslick");
+        $(".sync").slick({
+          lazyLoad: 'ondemand',
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 150,
+          swipe: true,
+          swipeToSlide: true,
+          infinite: false,
+        });
+      }    
+      $(".new-slider").slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 150,
+        swipe: true,
+        draggable: true,
+        swipeToSlide: true,
+        infinite: true,
+        arrows: false,
+        dots: true
+      });
+      $(".product-image-slider").slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 150,
+        swipe: true,
+        draggable: true,
+        swipeToSlide: true,
+        infinite: true,
+        arrows: true,
+        dots: false
+      });
+      $(".slider-centered").slick({
+        lazyLoad: 'ondemand',
+        centerMode: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 150,
+        swipe: true,
+        draggable: true,
+        swipeToSlide: true,
+        infinite: true,
+        arrows: false,
+        dots: true
+      });
+      $(".tab-slider").slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 150,
+        swipe: true,
+        draggable: true,
+        swipeToSlide: true,
+        infinite: true,
+        arrows: true,
+        dots: true
+      });      
+    } 
+    
+    $("a.tab-slide-link").click(function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      $("#tab2").click();
+      $('.tab-slider').slick('slickGoTo', $(this).index());
+    })
+    
+    // change original ATC button text to customized one                                                                  
+    document.querySelector(".main-product-subscription .add-cart-btn.button--single-cart span").innerHTML = ("{{ section.settings.new_atc_text }}");
+
+    //   make fake buttons clickable
+    const origButton = document.querySelector("button.add-cart-btn");
+    let fakeButtons = document.getElementsByClassName("fake-button");
+    for(let fakeButton of fakeButtons) {
+      fakeButton.onclick = function(event) {
+        origButton.click();
+      }
+    }
+    let fakeButtonsOr = document.getElementsByClassName("fake-button-original");
+    for(let fakeButtonO of fakeButtonsOr) {
+      fakeButtonO.onclick = function(event) {
+        origButton.click();
+      }
+    }
+
+    function showOriginalFAQ(){
+      const tabToMove = $("#product-template-tabs-template--15207135641790__163402235295bbce7d_3");
+  //     const originalLocation = $(".tab-accordion.tab-accordion--template--15109359468724__163402235295bbce7d");
+      const destination = $(".main-product-subscription .alt-faqs-accordion__wrapper .faq__container .faq").last().find(".faq-answer-new");
+      if ($(window).width() < 768){
+        tabToMove.clone().appendTo(destination);
+      }
+    } 
+
+    {% comment %} load SUBOX description on Desktop {% endcomment %}
+    (function showProductDescriptionDesktop(){
+      if(window.innerWidth > 768){
+        const targetUrl = '/products/{{ product.handle }}.js';
+        fetch(targetUrl)
+        .then(response => response.json())
+        .then(function(json){
+          document.getElementById('product-description').innerHTML = json.description;
+        })
+        .catch((err)=>{ console.log (err) });
+      } else {
+        document.getElementById('product-description').innerHTML = '';
+      }
+    })()
+
+    let waitForJQuery = setInterval(function () {
+      if (typeof $ != 'undefined') {
+          changeSlider();
+          showOriginalFAQ();
+          clearInterval(waitForJQuery);
+      }
+    }, 50);
+  });
+  
+</script>

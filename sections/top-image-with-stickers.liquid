@@ -1,0 +1,85 @@
+{% comment %}
+******************************************
+	Info:
+		Top image with extra stickers in product page.
+
+	  
+    Author: Zilvinas Vaisnoras
+    Date created: 2021-12-20
+    Included in: templates/product.subscription-product.json
+******************************************
+{% endcomment %}
+
+<style>
+    #{{section.id}} .wrapper{
+      background: none;
+    }
+  
+{%- capture show_hide_on_res -%}
+  {%- if section.settings.enable_on_desktop == false -%}
+  	fox-hide--medium-up
+  {%- endif -%}
+  {%- if section.settings.enable_on_mobile == false -%}
+  	fox-hide--small
+  {%- endif -%}
+{%- endcapture -%}
+  	
+</style>
+
+{%- if section.settings.enable_on_mobile == true or section.settings.enable_on_desktop == true -%}
+
+<div id="{{section.id}}" class="{{ show_hide_on_res }}">
+  <div class="wrapper">
+    <div class="content">
+      <div class="flex">
+      	<img class="cover-photo" src="{{ section.settings.cover_photo | img_url: 'large'}}" loading="lazy" alt="{{ section.settings.section_name}}">
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Top image with stickers",
+  "class": "product-top-main-image-with-stickers",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Top main image with stickers"
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_mobile",
+      "label": "Enable on mobile",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_on_desktop",
+      "label": "Enable on desktop",
+      "default": false
+    },
+	{
+      "type": "text",
+      "id": "section_name",
+      "label": "Section name",
+      "default": "Top main image with stickers"
+    },
+	{
+      "type": "image_picker",
+      "id": "cover_photo",
+      "label": "Cover photo / wrapper photo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product - top main image with stickers",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}
